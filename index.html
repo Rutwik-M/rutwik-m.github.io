@@ -5,133 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutwik's Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-      @font-face {
-        font-family: 'LucideIcons';
-        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
-      }
-      .lucide {
-        font-family: 'LucideIcons';
-        font-style: normal; font-weight: normal; font-variant: normal;
-        text-rendering: auto; line-height: 1;
-        -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-      }
-
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #1f2937;
-        color: #d1d5db;
-        cursor: none;
-        overflow-x: hidden;
-      }
-      html { scroll-behavior: smooth; }
-
-      .cursor-dot {
-        width: 8px; height: 8px;
-        background-color: #c4b5fd;
-        border-radius: 50%;
-        position: fixed;
-        top: 0; left: 0;
-        transform: translate(-50%, -50%);
-        pointer-events: none;
-        z-index: 9999;
-        opacity: 1;
-        transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
-      }
-      .cursor-dot.hovered {
-         width: 24px; height: 24px;
-         background-color: #ffffff;
-      }
-      @media (hover: none) {
-        .cursor-dot { display: none; }
-        body { cursor: auto; }
-      }
-
-      .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-      }
-      .animate-on-scroll.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .project-card {
-        transform-style: preserve-3d;
-        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
-      }
-      .project-card:hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 15px -3px rgba(167, 139, 250, 0.2), 0 0 8px -4px rgba(167, 139, 250, 0.1);
-      }
-      .project-card .project-image-container {
-            overflow: hidden;
-            border-radius: 0.5rem;
-      }
-      .project-card .project-image {
-            transition: transform 0.4s ease-in-out;
-      }
-      .project-card:hover .project-image {
-            transform: scale(1.05);
-      }
-
-      #hero-canvas {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        z-index: 0;
-        opacity: 0.3;
-        pointer-events: none;
-      }
-
-      .nav-link {
-          position: relative;
-          overflow: hidden;
-      }
-      .nav-link::after {
-          content: '';
-          position: absolute;
-          bottom: -2px;
-          left: 0;
-          width: 0;
-          height: 2px;
-          background-color: #a78bfa;
-          transition: width 0.3s ease-out;
-      }
-      .nav-link.bg-accent-500::after,
-      .nav-link.bg-gray-700::after {
-           display: none;
-      }
-      .nav-link:hover::after {
-           width: 100%;
-      }
-
-      @keyframes slideUpFadeIn {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-      }
-
-       .cta-button-primary, .cta-button-secondary {
-           transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-       }
-       .cta-button-primary:hover {
-           box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.3), 0 4px 6px -4px rgba(124, 58, 237, 0.2);
-       }
-       .cta-button-secondary:hover {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-       }
-
-       .skill-icon-circle {
-            transition: transform 0.3s ease, background-color 0.3s ease;
-       }
-       .group:hover .skill-icon-circle {
-            transform: scale(1.1) translateY(-4px);
-       }
-
+    <script>
       tailwind.config = {
         theme: {
           extend: {
@@ -153,11 +27,144 @@
           }
         }
       }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      @font-face {
+        font-family: 'LucideIcons';
+        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
+      }
+      .lucide {
+        font-family: 'LucideIcons';
+        font-style: normal; font-weight: normal; font-variant: normal;
+        text-rendering: auto; line-height: 1;
+        -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #1f2937;
+        color: #d1d5db;
+        cursor: none; /* Hide default cursor for custom cursor effect */
+        overflow-x: hidden;
+      }
+      html { scroll-behavior: smooth; }
+
+      .cursor-dot {
+        width: 8px; height: 8px;
+        background-color: #c4b5fd;
+        border-radius: 50%;
+        position: fixed;
+        top: 0; left: 0;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 1;
+        transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+      }
+      .cursor-dot.hovered {
+         width: 24px; height: 24px;
+         background-color: #ffffff;
+      }
+      @media (hover: none) { /* If device does not support hover (e.g., touch devices) */
+        .cursor-dot { display: none !important; } /* Ensure custom cursor is hidden */
+        body { cursor: auto; } /* Show default system cursor */
+      }
+
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      }
+      .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .project-card {
+        transform-style: preserve-3d;
+        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+      }
+      .project-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 15px -3px rgba(167, 139, 250, 0.2), 0 0 8px -4px rgba(167, 139, 250, 0.1);
+      }
+      .project-card .project-image-container {
+          overflow: hidden;
+          border-radius: 0.5rem;
+      }
+      .project-card .project-image {
+          transition: transform 0.4s ease-in-out;
+      }
+      .project-card:hover .project-image {
+          transform: scale(1.05);
+      }
+
+      #hero-canvas {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        z-index: 0;
+        opacity: 0.3;
+        pointer-events: none;
+      }
+
+      .nav-link {
+         position: relative;
+         overflow: hidden;
+      }
+      .nav-link::after {
+         content: '';
+         position: absolute;
+         bottom: -2px;
+         left: 0;
+         width: 0;
+         height: 2px;
+         background-color: #a78bfa;
+         transition: width 0.3s ease-out;
+      }
+      .nav-link.bg-accent-500::after, /* Example: assuming cta-button-primary might have this */
+      .nav-link.bg-gray-700::after, /* Example: if mobile menu items get specific bg */
+      a.cta-button-primary::after, /* Specific fix for buttons styled as nav-links */
+      a.cta-button-secondary::after,
+      button#mobile-menu-button::after { /* Specific fix for mobile menu button */
+          display: none;
+      }
+      .nav-link:hover:not(.cta-button-primary):not(.cta-button-secondary):not(#mobile-menu-button):not([class*="bg-accent-"]):not([class*="bg-gray-"])::after { /* Ensure underline only for text links */
+          width: 100%;
+      }
+
+
+      @keyframes slideUpFadeIn {
+         from { opacity: 0; transform: translateY(20px); }
+         to { opacity: 1; transform: translateY(0); }
+      }
+
+       .cta-button-primary, .cta-button-secondary {
+          transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+       }
+       .cta-button-primary:hover {
+          box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.3), 0 4px 6px -4px rgba(124, 58, 237, 0.2);
+       }
+       .cta-button-secondary:hover {
+           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+       }
+
+       .skill-icon-circle {
+           transition: transform 0.3s ease, background-color 0.3s ease;
+       }
+       .group:hover .skill-icon-circle {
+           transform: scale(1.1) translateY(-4px);
+       }
+
+       /* REMOVED tailwind.config = { ... } FROM HERE */
     </style>
 </head>
 <body class="antialiased">
 
-    <div class="hidden md:cursor-dot" id="cursor-dot"></div>
+    <div id="cursor-dot" class="cursor-dot"></div>
 
     <nav class="bg-gray-900/80 backdrop-blur-lg shadow-md sticky top-0 z-50 border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -185,7 +192,7 @@
     <header class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-accent-950/30 py-28 md:py-40 overflow-hidden">
         <canvas id="hero-canvas"></canvas>
         <div class="container mx-auto px-6 text-center relative z-10">
-             <img src="static/images/profile.webp" alt="Rutwik" class="nav-link w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-8 border-4 border-gray-600 shadow-xl transition duration-300 ease-in-out transform hover:scale-105" style="animation: slideUpFadeIn 0.8s 0.1s ease-out forwards;">
+             <img src="static/images/profile.webp" alt="Rutwik" class="nav-link w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-8 border-4 border-gray-600 shadow-xl transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer" style="animation: slideUpFadeIn 0.8s 0.1s ease-out forwards;">
              <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-100 mb-5 leading-tight" style="animation: slideUpFadeIn 0.8s 0.3s ease-out forwards;">
                 Hi, <span class="text-accent-400">Rutwik</span> here!
             </h1>
@@ -239,7 +246,7 @@
                             <h5 class="font-semibold text-gray-100 mb-2">Version Control & Deployment</h5>
                              <div class="space-y-1 text-sm text-gray-400">
                                  <p class="flex items-center"><i class="fa-brands fa-git-alt fa-fw mr-2 text-accent-400"></i><i class="fa-brands fa-github fa-fw mr-2 text-accent-400"></i> Git & GitHub - Used for verison control and collaborative development.</p>
-                                 <p class="flex items-center"><img src="static/images/rsz_render.png" alt="Gondi WordNet Project" class="bg-gray-400 w-5 h-5 rounded-full text-accent-400 mr-2"> Render - Used for website deployments.</p>
+                                 <p class="flex items-center"><img src="static/images/rsz_render.png" alt="Render Deployment Icon" class="bg-gray-400 w-5 h-5 rounded-full text-accent-400 mr-2"> Render - Used for website deployments.</p>
                             </div>
                         </div>
 
@@ -247,7 +254,7 @@
                             <h5 class="font-semibold text-gray-100 mb-2">Research & Development</h5>
                              <div class="space-y-1 text-sm text-gray-400">
                                 <p class="flex items-center"><i class="fa-solid fa-brain fa-fw mr-2 text-accent-400"></i> Natural Language Processing</p>
-                                <p class="flex items-center"><i class="fa-solid fa-file-lines fa-fw mr-2 text-accent-400"></i> Academic Writing - &nbsp<a href="https://ieeexplore.ieee.org/document/10882401"><u>IEEE Paper</u></a></p>
+                                <p class="flex items-center"><i class="fa-solid fa-file-lines fa-fw mr-2 text-accent-400"></i> Academic Writing - &nbsp;<a href="https://ieeexplore.ieee.org/document/10882401" target="_blank" rel="noopener noreferrer" class="nav-link underline hover:text-accent-300">IEEE Paper</a></p>
                             </div>
                         </div>
 
@@ -285,7 +292,6 @@
       </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-      <!-- Project 1: Broadband Digital -->
       <div class="project-card bg-gray-700 p-6 rounded-xl border border-gray-600 transition-all duration-300 ease-in-out group animate-on-scroll cursor-pointer" style="transition-delay: 0.2s;">
         <div class="project-image-container mb-10 rounded-lg ">
           <img src="https://broadbanddigital.in/static/images/logo.png" alt="Broadband Digital Website" class="project-image w-full rounded-lg h-52 object-contain bg-white p-3 transition duration-300 group-hover:opacity-95">
@@ -300,13 +306,12 @@
         <p class="text-gray-400 text-sm mb-5">
           Developed and deployed a fully responsive ISP website with a Flask-based backend, user-friendly UI, and admin dashboard for plan management. Delivered end-to-end, including deployment via cPanel.
         </p>
-        <a href="https://broadbanddigital.in/" target="_blank" class="inline-flex items-center text-accent-400 font-medium group text-sm">
+        <a href="https://broadbanddigital.in/" target="_blank" rel="noopener noreferrer" class="nav-link inline-flex items-center text-accent-400 font-medium group text-sm">
           View Live &nbsp
-          <i class="fa-solid fa-arrow-right mr-2 text-accent-400"></i> 
+          <i class="fa-solid fa-arrow-right text-accent-400 group-hover:translate-x-1 transition-transform duration-300"></i> 
         </a>
       </div>
-      <!-- Project 2: Gondi WordNet -->
-      <div class="hidden project-card bg-gray-700 p-6 rounded-xl border border-gray-600 transition-all duration-300 ease-in-out group animate-on-scroll cursor-pointer" style="transition-delay: 0.3s;">
+      <div class="project-card bg-gray-700 p-6 rounded-xl border border-gray-600 transition-all duration-300 ease-in-out group animate-on-scroll cursor-pointer" style="transition-delay: 0.3s;">
         <div class="project-image-container mb-5 rounded-lg">
           <img src="https://gondi-wordnet.onrender.com/static/images/gondi-logo.png" alt="Gondi WordNet Project" class="project-image w-full h-52 object-contain bg-gray-900 p-6 transition duration-300 group-hover:opacity-95">
         </div>
@@ -319,12 +324,12 @@
         <p class="text-gray-400 text-sm mb-5">
           Co-authored and developed a lexical database for the Gondi language, contributing to linguistic preservation. Published at the 2nd IEEE International Conference on AI & Quantum Computation-Based Sensor Applications – 2024.
         </p>
-        <a href="https://www.linkedin.com/posts/sahil-karande-5272652a6_ai-research-researchpaper-activity-7279890170202456065-0_N0" target="_blank" class="inline-flex items-center text-accent-400 font-medium group text-sm">
+        <a href="https://www.linkedin.com/posts/sahil-karande-5272652a6_ai-research-researchpaper-activity-7279890170202456065-0_N0" target="_blank" rel="noopener noreferrer" class="nav-link inline-flex items-center text-accent-400 font-medium group text-sm">
           View Publication
-          <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-arrow-right ml-1 transition-transform duration-300 group-hover:translate-x-1" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-arrow-right ml-1 transition-transform duration-300 group-hover:translate-x-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
-    </div>
+      </div>
   </div>
 </section>
 
@@ -334,24 +339,24 @@
             <p class="text-gray-300 text-lg max-w-xl mx-auto mb-8 leading-relaxed animate-on-scroll" style="transition-delay: 0.1s;">
                 Interested in collaborating?<br>or have a work?<br>Feel free to reach out!
             </p>
-            <div class="animate-on-scroll grid-cols-2 inline-flex justify-center" style="transition-delay: 0.2s;">
-                <a href="mailto:rmuley558@gmail.com" class="nav-link cta-button-primary inline-block bg-accent-600 text-gray-300 hover:bg-accent-700  px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl text-base mb-10 transform hover:-translate-y-1">
-                    <i class="fa fa-envelope mr-2 text-accent-400"></i><br class="md:hidden">
+            <div class="animate-on-scroll space-y-4 sm:space-y-0 sm:space-x-4 sm:inline-flex justify-center" style="transition-delay: 0.2s;">
+                <a href="mailto:rmuley558@gmail.com" class="nav-link cta-button-primary inline-flex items-center justify-center bg-accent-600 text-gray-100 hover:bg-accent-700 px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl text-base transform hover:-translate-y-1 w-full sm:w-auto mb-4 sm:mb-0">
+                    <i class="fa fa-envelope mr-2 text-accent-300"></i>
                     Send Me an Email
                 </a>
-                <a href="tel:+917058944455" class="nav-link cta-button-primary inline-block bg-accent-600 text-gray-300 hover:bg-accent-700 px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl text-base mb-10 transform hover:-translate-y-1">
-                    <i class="fa-solid fa-phone mr-2 text-accent-400"></i><br class="md:hidden">
+                <a href="tel:+917058944455" class="nav-link cta-button-primary inline-flex items-center justify-center bg-accent-600 text-gray-100 hover:bg-accent-700 px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl text-base transform hover:-translate-y-1 w-full sm:w-auto">
+                    <i class="fa-solid fa-phone mr-2 text-accent-300"></i>
                     Call Me
                 </a>
             </div>
-            <div class="flex justify-center space-x-8 animate-on-scroll" style="transition-delay: 0.3s;">
-                 <a href="https://www.linkedin.com/in/rutwik-muley-b20707208" aria-label="LinkedIn Profile" class="nav-link text-gray-400 hover:text-accent-400 transition-all duration-300 transform hover:scale-110 hover:rotate-[-10deg]" title="LinkedIn">
+             <div class="flex justify-center space-x-8 mt-10 animate-on-scroll" style="transition-delay: 0.3s;">
+                 <a href="https://www.linkedin.com/in/rutwik-muley-b20707208" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="nav-link text-gray-400 hover:text-accent-400 transition-all duration-300 transform hover:scale-110 hover:rotate-[-10deg]" title="LinkedIn">
                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                 </a>
-                 <a href="https://github.com/Rutwik-M" aria-label="GitHub Profile" class="nav-link text-gray-400 hover:text-gray-200 transition-all duration-300 transform hover:scale-110 hover:rotate-[10deg]" title="GitHub">
+                </a>
+                 <a href="https://github.com/Rutwik-M" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="nav-link text-gray-400 hover:text-gray-200 transition-all duration-300 transform hover:scale-110 hover:rotate-[10deg]" title="GitHub">
                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-1.5 6-6.5.08-1.3-.32-2.7-.98-3.7c.4-.63.6-1.47.4-2.31-.59-.27-1.96.27-3.74 1.5a10.27 10.27 0 0 0-6.32 0C6.94 4.27 5.57 3.77 5 4.04c-.2 1 .0 1.68.4 2.31-.66 1-.98 2.4-.98 3.7 0 5 3 6.5 6 6.5-1 1-1 2.5-1 3.5V22"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                 </a>
-                 </div>
+                </a>
+                </div>
         </div>
     </section>
 
@@ -367,7 +372,7 @@
         menuButton.addEventListener('click', () => {
             const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
             mobileMenu.classList.toggle('hidden');
-            menuButton.setAttribute('aria-expanded', !isExpanded);
+            menuButton.setAttribute('aria-expanded', String(!isExpanded)); // Ensure boolean is string
         });
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
@@ -393,82 +398,95 @@
 
         const cursorDot = document.getElementById('cursor-dot');
         const supportsHover = window.matchMedia('(hover: hover)').matches;
-        if (supportsHover) {
-            window.addEventListener('mousemove', (e) => {
-                cursorDot.style.left = `${e.clientX}px`;
-                cursorDot.style.top = `${e.clientY}px`;
-            });
-            document.querySelectorAll('a, button, .cursor-pointer, .project-card, .group').forEach(el => {
-                el.addEventListener('mouseenter', () => cursorDot.classList.add('hovered'));
-                el.addEventListener('mouseleave', () => cursorDot.classList.remove('hovered'));
-            });
+
+        if (cursorDot) { // Check if cursorDot element exists
+            if (supportsHover) {
+                document.body.style.cursor = 'none'; // Hide system cursor only if custom cursor is active
+                window.addEventListener('mousemove', (e) => {
+                    cursorDot.style.left = `${e.clientX}px`;
+                    cursorDot.style.top = `${e.clientY}px`;
+                    cursorDot.style.display = 'block'; // Make sure it's visible when moving
+                });
+                document.querySelectorAll('a, button, .cursor-pointer, .project-card, .group').forEach(el => {
+                    el.addEventListener('mouseenter', () => cursorDot.classList.add('hovered'));
+                    el.addEventListener('mouseleave', () => cursorDot.classList.remove('hovered'));
+                });
+                 // Ensure cursor dot is initially visible on hover devices
+                cursorDot.style.display = 'block';
+
+            } else {
+                 cursorDot.style.display = 'none'; // Explicitly hide custom cursor
+                 document.body.style.cursor = 'auto'; // Show default system cursor
+            }
         } else {
-             if (cursorDot) cursorDot.style.display = 'none';
+            // Fallback if cursorDot is not found - ensure default cursor is visible
              document.body.style.cursor = 'auto';
         }
 
+
         const canvas = document.getElementById('hero-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        let animationFrameId;
-        function resizeCanvas() {
-            canvas.width = canvas.offsetWidth * window.devicePixelRatio;
-            canvas.height = canvas.offsetHeight * window.devicePixelRatio;
-            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-        }
-        class Particle {
-            constructor(x, y) {
-                this.x = x; this.y = y;
-                this.size = Math.random() * 1.5 + 0.5;
-                this.speedX = Math.random() * 0.4 - 0.2;
-                this.speedY = Math.random() * 0.4 - 0.2;
-                this.color = `rgba(167, 139, 250, ${Math.random() * 0.4 + 0.1})`;
+        if (canvas) { // Check if canvas element exists
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            let animationFrameId;
+            function resizeCanvas() {
+                canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+                canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+                ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
             }
-            update() {
-                this.x += this.speedX; this.y += this.speedY;
+            class Particle {
+                constructor(x, y) {
+                    this.x = x; this.y = y;
+                    this.size = Math.random() * 1.5 + 0.5;
+                    this.speedX = Math.random() * 0.4 - 0.2;
+                    this.speedY = Math.random() * 0.4 - 0.2;
+                    this.color = `rgba(167, 139, 250, ${Math.random() * 0.4 + 0.1})`;
+                }
+                update() {
+                    this.x += this.speedX; this.y += this.speedY;
+                    const scaledWidth = canvas.width / window.devicePixelRatio;
+                    const scaledHeight = canvas.height / window.devicePixelRatio;
+                    if (this.x < 0) this.x = scaledWidth; if (this.x > scaledWidth) this.x = 0;
+                    if (this.y < 0) this.y = scaledHeight; if (this.y > scaledHeight) this.y = 0;
+                }
+                draw() {
+                    ctx.fillStyle = this.color; ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+                }
+            }
+            function initParticles() {
+                particles = [];
                 const scaledWidth = canvas.width / window.devicePixelRatio;
                 const scaledHeight = canvas.height / window.devicePixelRatio;
-                if (this.x < 0) this.x = scaledWidth; if (this.x > scaledWidth) this.x = 0;
-                if (this.y < 0) this.y = scaledHeight; if (this.y > scaledHeight) this.y = 0;
+                const numberOfParticles = Math.floor(scaledWidth * scaledHeight / 15000);
+                for (let i = 0; i < numberOfParticles; i++) {
+                    particles.push(new Particle(Math.random() * scaledWidth, Math.random() * scaledHeight));
+                }
             }
-            draw() {
-                ctx.fillStyle = this.color; ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+            function animateParticles() {
+                const scaledWidth = canvas.width / window.devicePixelRatio;
+                const scaledHeight = canvas.height / window.devicePixelRatio;
+                ctx.clearRect(0, 0, scaledWidth, scaledHeight);
+                particles.forEach(particle => { particle.update(); particle.draw(); });
+                animationFrameId = requestAnimationFrame(animateParticles);
             }
-        }
-        function initParticles() {
-            particles = [];
-            const scaledWidth = canvas.width / window.devicePixelRatio;
-            const scaledHeight = canvas.height / window.devicePixelRatio;
-            const numberOfParticles = Math.floor(scaledWidth * scaledHeight / 15000);
-            for (let i = 0; i < numberOfParticles; i++) {
-                particles.push(new Particle(Math.random() * scaledWidth, Math.random() * scaledHeight));
+            function startAnimation() {
+                resizeCanvas(); initParticles();
+                if (animationFrameId) cancelAnimationFrame(animationFrameId);
+                animateParticles();
             }
+            function debounce(func, wait = 100, immediate = false) {
+                let timeout;
+                return function() {
+                    const context = this, args = arguments;
+                    const later = function() { timeout = null; if (!immediate) func.apply(context, args); };
+                    const callNow = immediate && !timeout; clearTimeout(timeout);
+                    timeout = setTimeout(later, wait); if (callNow) func.apply(context, args);
+                };
+            }
+            window.addEventListener('load', startAnimation);
+            window.addEventListener('resize', debounce(startAnimation, 250));
         }
-        function animateParticles() {
-            const scaledWidth = canvas.width / window.devicePixelRatio;
-            const scaledHeight = canvas.height / window.devicePixelRatio;
-            ctx.clearRect(0, 0, scaledWidth, scaledHeight);
-            particles.forEach(particle => { particle.update(); particle.draw(); });
-            animationFrameId = requestAnimationFrame(animateParticles);
-        }
-        function startAnimation() {
-            resizeCanvas(); initParticles();
-            if (animationFrameId) cancelAnimationFrame(animationFrameId);
-            animateParticles();
-        }
-        function debounce(func, wait = 100, immediate = false) {
-            let timeout;
-            return function() {
-                const context = this, args = arguments;
-                const later = function() { timeout = null; if (!immediate) func.apply(context, args); };
-                const callNow = immediate && !timeout; clearTimeout(timeout);
-                timeout = setTimeout(later, wait); if (callNow) func.apply(context, args);
-            };
-        }
-        window.addEventListener('load', startAnimation);
-        window.addEventListener('resize', debounce(startAnimation, 250));
-
     </script>
 
 </body>
