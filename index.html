@@ -135,7 +135,10 @@
       .nav-link:hover:not(.cta-button-primary):not(.cta-button-secondary):not(#mobile-menu-button):not([class*="bg-accent-"]):not([class*="bg-gray-"])::after { /* Ensure underline only for text links */
           width: 100%;
       }
-
+      @media (hover: none) { /* If device does not support hover (e.g., touch devices) */
+        .cursor-dot { display: none !important; } /* Ensure custom cursor is hidden */
+        body { cursor: auto; } /* Show default system cursor */
+      }
 
       @keyframes slideUpFadeIn {
          from { opacity: 0; transform: translateY(20px); }
@@ -158,10 +161,7 @@
        .group:hover .skill-icon-circle {
            transform: scale(1.1) translateY(-4px);
        }
-       @media (hover: none) { /* If device does not support hover (e.g., touch devices) */
-        .cursor-dot { display: none !important; } /* Ensure custom cursor is hidden */
-        body { cursor: auto; } /* Show default system cursor */
-      }
+
        /* REMOVED tailwind.config = { ... } FROM HERE */
     </style>
 </head>
@@ -406,22 +406,29 @@
         document.querySelectorAll('.animate-on-scroll').forEach(element => scrollObserver.observe(element));
 
         const cursorDot = document.getElementById('cursor-dot');
-        const supportsHover = window.matchMedia('(hover: hover)').matches; // Checks hover capability
+        const supportsHover = window.matchMedia('(hover: hover)').matches;
 
-        if (cursorDot) {
+        if (cursorDot) { // Check if cursorDot element exists
             if (supportsHover) {
-                // This block runs on desktops/laptops (hover is supported)
-                document.body.style.cursor = 'none'; // Hide system cursor
-                // ... (code to move the custom cursor) ...
-                cursorDot.style.display = 'block'; // Make sure custom cursor is visible
+                document.body.style.cursor = 'none'; // Hide system cursor only if custom cursor is active
+                window.addEventListener('mousemove', (e) => {
+                    cursorDot.style.left = `${e.clientX}px`;
+                    cursorDot.style.top = `${e.clientY}px`;
+                    cursorDot.style.display = 'block'; // Make sure it's visible when moving
+                });
+                document.querySelectorAll('a, button, .cursor-pointer, .project-card, .group').forEach(el => {
+                    el.addEventListener('mouseenter', () => cursorDot.classList.add('hovered'));
+                    el.addEventListener('mouseleave', () => cursorDot.classList.remove('hovered'));
+                });
+                 // Ensure cursor dot is initially visible on hover devices
+                cursorDot.style.display = 'block';
 
             } else {
-                // This block runs on mobile/touch screens (hover is NOT supported)
                  cursorDot.style.display = 'none'; // Explicitly hide custom cursor
                  document.body.style.cursor = 'auto'; // Show default system cursor
             }
         } else {
-            // Fallback if the cursorDot element isn't found for some reason
+            // Fallback if cursorDot is not found - ensure default cursor is visible
              document.body.style.cursor = 'auto';
         }
 
