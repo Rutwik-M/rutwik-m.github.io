@@ -158,7 +158,10 @@
        .group:hover .skill-icon-circle {
            transform: scale(1.1) translateY(-4px);
        }
-
+       @media (hover: none) { /* If device does not support hover (e.g., touch devices) */
+        .cursor-dot { display: none !important; } /* Ensure custom cursor is hidden */
+        body { cursor: auto; } /* Show default system cursor */
+      }
        /* REMOVED tailwind.config = { ... } FROM HERE */
     </style>
 </head>
