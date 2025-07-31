@@ -3,500 +3,530 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rutwik's Portfolio</title>
+    <title>Rutwik Muley // Creative Engineer & Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              accent: {
-                DEFAULT: '#a78bfa', '50': '#f5f3ff', '100': '#ede9fe', '200': '#ddd6fe',
-                '300': '#c4b5fd', '400': '#a78bfa', '500': '#8b5cf6',
-                '600': '#7c3aed', '700': '#6d28d9', '800': '#5b21b6',
-                '900': '#4c1d95', '950': '#2e1065',
-              },
-              secondary: {
-                  DEFAULT: '#fbcfe8', '100': '#fce7f3', '200': '#fbcfe8',
-                  '700': '#be185d',
-              },
-              'green-300': '#6ee7b7', 'blue-300': '#93c5fd',
-              'yellow-300': '#fcd34d', 'purple-300': '#d8b4fe',
-              'pink-300': '#f9a8d4',
-            }
-          }
-        }
-      }
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-      @font-face {
-        font-family: 'LucideIcons';
-        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
-      }
-      .lucide {
-        font-family: 'LucideIcons';
-        font-style: normal; font-weight: normal; font-variant: normal;
-        text-rendering: auto; line-height: 1;
-        -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-      }
-
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #1f2937;
-        color: #d1d5db;
-        cursor: none; /* Hide default cursor for custom cursor effect */
-        overflow-x: hidden;
-      }
-      html { scroll-behavior: smooth; }
-
-      .cursor-dot {
-        width: 8px; height: 8px;
-        background-color: #c4b5fd;
-        border-radius: 50%;
-        position: fixed;
-        top: 0; left: 0;
-        transform: translate(-50%, -50%);
-        pointer-events: none;
-        z-index: 9999;
-        opacity: 1;
-        transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
-      }
-      .cursor-dot.hovered {
-         width: 24px; height: 24px;
-         background-color: #ffffff;
-      }
-      @media (hover: none) { /* If device does not support hover (e.g., touch devices) */
-        .cursor-dot { display: none !important; } /* Ensure custom cursor is hidden */
-        body { cursor: auto; } /* Show default system cursor */
-      }
-
-      .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-      }
-      .animate-on-scroll.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .project-card {
-        transform-style: preserve-3d;
-        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
-      }
-      .project-card:hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 15px -3px rgba(167, 139, 250, 0.2), 0 0 8px -4px rgba(167, 139, 250, 0.1);
-      }
-      .project-card .project-image-container {
-          overflow: hidden;
-          border-radius: 0.5rem;
-      }
-      .project-card .project-image {
-          transition: transform 0.4s ease-in-out;
-      }
-      .project-card:hover .project-image {
-          transform: scale(1.05);
-      }
-
-      #hero-canvas {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        z-index: 0;
-        opacity: 0.3;
-        pointer-events: none;
-      }
-
-      .nav-link {
-         position: relative;
-         overflow: hidden;
-      }
-      .nav-link::after {
-         content: '';
-         position: absolute;
-         bottom: -2px;
-         left: 0;
-         width: 0;
-         height: 2px;
-         background-color: #a78bfa;
-         transition: width 0.3s ease-out;
-      }
-      .nav-link.bg-accent-500::after, /* Example: assuming cta-button-primary might have this */
-      .nav-link.bg-gray-700::after, /* Example: if mobile menu items get specific bg */
-      a.cta-button-primary::after, /* Specific fix for buttons styled as nav-links */
-      a.cta-button-secondary::after,
-      button#mobile-menu-button::after { /* Specific fix for mobile menu button */
-          display: none;
-      }
-      .nav-link:hover:not(.cta-button-primary):not(.cta-button-secondary):not(#mobile-menu-button):not([class*="bg-accent-"]):not([class*="bg-gray-"])::after { /* Ensure underline only for text links */
-          width: 100%;
-      }
-      @media (hover: none) { /* If device does not support hover (e.g., touch devices) */
-        .cursor-dot { display: none !important; } /* Ensure custom cursor is hidden */
-        body { cursor: auto; } /* Show default system cursor */
-      }
-
-      @keyframes slideUpFadeIn {
-         from { opacity: 0; transform: translateY(20px); }
-         to { opacity: 1; transform: translateY(0); }
-      }
-
-       .cta-button-primary, .cta-button-secondary {
-          transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-       }
-       .cta-button-primary:hover {
-          box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.3), 0 4px 6px -4px rgba(124, 58, 237, 0.2);
-       }
-       .cta-button-secondary:hover {
-           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-       }
-
-       .skill-icon-circle {
-           transition: transform 0.3s ease, background-color 0.3s ease;
-       }
-       .group:hover .skill-icon-circle {
-           transform: scale(1.1) translateY(-4px);
-       }
-
-       /* REMOVED tailwind.config = { ... } FROM HERE */
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: #EAEAEA;
+            color: #111;
+            cursor: none;
+        }
+        h1, h2, h3, h4, .font-mono {
+            font-family: 'Space Mono', monospace;
+        }
+        .custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #111;
+            border-radius: 50%;
+            pointer-events: none;
+            background-color: transparent;
+            transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s ease, width 0.2s ease, height 0.2s ease;
+            z-index: 9999;
+        }
+        @media (hover: none) and (pointer: coarse) {
+            .custom-cursor { display: none !important; }
+            body { cursor: auto; }
+        }
+        .custom-cursor.hovered {
+            background-color: #FFD700;
+            transform: scale(1.5);
+        }
+        .border-grid {
+            border: 1px solid #d1d1d1;
+        }
+        .unique-frame {
+            position: relative;
+            width: 200px;
+            height: 250px;
+        }
+        @media (min-width: 768px) {
+            .unique-frame {
+                width: 400px;
+                height: 500px;
+            }
+        }
+        .unique-frame::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 20px;
+            left: 20px;
+            background-color: #FFD700;
+            z-index: 1;
+        }
+        .unique-frame::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: -10px;
+            left: -10px;
+            border: 2px solid #111;
+            z-index: 3;
+        }
+        .unique-frame img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 2;
+            border: 2px solid #111;
+        }
+        .project-card {
+            background-color: #f8f8f8;
+            border: 2px solid #111;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            box-shadow: 10px 10px 0px #FFD700;
+            transform: translate(-5px, -5px);
+        }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+        .scrolling-text {
+            animation: scroll 40s linear infinite;
+        }
+        /* Brutalist Menu Styles */
+        .menu-button {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #111;
+            background-color: #EAEAEA;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        @media(min-width: 768px) {
+            .menu-button {
+                position: absolute;
+            }
+        }
+        .menu-button:hover {
+            background-color: #FFD700;
+        }
+        .menu-button .bar {
+            width: 28px;
+            height: 3px;
+            background-color: #111;
+            transition: all 0.3s ease;
+        }
+        .menu-button.is-active .bar:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        .menu-button.is-active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-button.is-active .bar:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #FFD700;
+            z-index: 9998;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        @media (min-width: 768px) {
+            .menu-overlay {
+                width: 33.333333%;
+            }
+        }
+        .menu-overlay.is-active {
+            transform: translateX(0);
+        }
+        .menu-overlay a {
+            font-family: 'Space Mono', monospace;
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            color: #111;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .menu-overlay a:hover {
+            color: white;
+        }
+        /* Toolkit Styles */
+        .toolkit-list-item {
+            border-bottom: 2px solid #ccc;
+            transition: background-color 0.3s ease;
+        }
+        .toolkit-list-item:last-child {
+            border-bottom: none;
+        }
+        @media(min-width: 768px) {
+            
+             .toolkit-list-item:nth-child(9), .toolkit-list-item:nth-child(10) {
+                border-bottom: none;
+            }
+        }
+        .toolkit-list-item a {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem 2rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #111;
+        }
+        .toolkit-list .toolkit-list-item:hover,
+        .toolkit-list .toolkit-list-item.pre-selected {
+            background-color: #FFD700;
+        }
+        .toolkit-visual {
+            display: none;
+            background-color: #111;
+            color: #EAEAEA;
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+        }
+        .toolkit-visual.is-active {
+            display: block;
+        }
+        /* Typing Animation Styles */
+        .typing-cursor {
+            display: inline-block;
+            width: 4px;
+            height: 1em;
+            background-color: #111;
+            margin-left: 8px;
+            vertical-align: bottom;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        /* Added for mobile layout stability */
+        .headline-container {
+            min-height: 210px; /* Adjust as needed */
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <div id="cursor-dot" class="cursor-dot"></div>
+    <div class="custom-cursor"></div>
 
-    <nav class="bg-gray-900/80 backdrop-blur-lg shadow-md sticky top-0 z-50 border-b border-gray-700">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-accent-400 hover:text-accent-300 transition duration-300 ease-in-out cursor-pointer">Rutwik's Portfolio</a>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#" class="nav-link text-gray-300 hover:text-accent-300 transition duration-300 font-medium text-sm tracking-wide">Home</a>
-                <a href="#about" class="nav-link text-gray-300 hover:text-accent-300 transition duration-300 font-medium text-sm tracking-wide">About</a>
-                <a href="#projects" class="nav-link text-gray-300 hover:text-accent-300 transition duration-300 font-medium text-sm tracking-wide">Projects</a>
-                <a href="#contact" class="nav-link cta-button-primary bg-accent-500 text-white hover:bg-accent-600 px-5 py-2 rounded-md font-semibold shadow-sm hover:shadow-md text-sm tracking-wide transform hover:-translate-y-1">Contact</a>
-            </div>
-            <div class="md:hidden flex items-center">
-                <button id="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false" class="nav-link text-gray-300 hover:text-accent-300 focus:outline-none p-2 rounded-md hover:bg-gray-700 transition duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="md:hidden hidden bg-gray-800 border-t border-gray-700 shadow-md">
-            <a href="#" class="nav-link block px-5 py-3 text-gray-300 hover:bg-gray-700 hover:text-accent-300 transition duration-300 font-medium">Home</a>
-            <a href="#about" class="nav-link block px-5 py-3 text-gray-300 hover:bg-gray-700 hover:text-accent-300 transition duration-300 font-medium">About</a>
-            <a href="#projects" class="nav-link block px-5 py-3 text-gray-300 hover:bg-gray-700 hover:text-accent-300 transition duration-300 font-medium">Projects</a>
-            <a href="#contact" class="nav-link block px-5 py-3 text-gray-300 hover:bg-gray-700 hover:text-accent-300 transition duration-300 font-medium">Contact</a>
-        </div>
-    </nav>
+    <div class="menu-overlay" id="menu-overlay">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+    </div>
 
-    <header class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-accent-950/30 py-28 md:py-40 overflow-hidden">
-        <canvas id="hero-canvas"></canvas>
-        <div class="container mx-auto px-6 text-center relative z-10">
-             <img src="static/images/profile.webp" alt="Rutwik" class="nav-link w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-8 border-4 border-gray-600 shadow-xl transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer" style="animation: slideUpFadeIn 0.8s 0.1s ease-out forwards;">
-             <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-100 mb-5 leading-tight" style="animation: slideUpFadeIn 0.8s 0.3s ease-out forwards;">
-                Hi, <span class="text-accent-400">Rutwik</span> here!
-            </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto" style="animation: slideUpFadeIn 0.8s 0.5s ease-out forwards;">
-                A passionate engineer creating unique and intuitive web experiences. Welcome!
-            </p>
-            <div class="space-y-4 sm:space-y-0 sm:space-x-4" style="animation: slideUpFadeIn 0.8s 0.7s ease-out forwards;">
-                <a href="#projects" class="nav-link cta-button-primary inline-block bg-accent-600 text-white hover:bg-accent-700 px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl text-base transform hover:-translate-y-1">
-                    View My Work
-                </a>
-                <a href="#contact" class="nav-link cta-button-secondary inline-block bg-gray-700 text-accent-300 border-2 border-gray-600 hover:bg-gray-600 hover:border-gray-500 px-8 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg text-base transform hover:-translate-y-1">
-                    Get In Touch
-                </a>
+    <header class="min-h-screen relative p-4">
+        <div class="absolute top-8 left-8 font-mono text-sm md:text-lg z-10">Rutwik // Portfolio</div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-full min-h-screen">
+            <div class="md:col-span-2 border-grid flex items-center justify-center md:justify-start text-center md:text-left p-8 relative overflow-hidden order-2 md:order-1">
+                <div class="absolute -bottom-4 -right-2 font-mono text-7xl md:text-[10rem] font-bold text-gray-200 select-none transform rotate-[-15deg] opacity-70">ENGINEER</div>
+                <div class="relative z-10 headline-container">
+                     <h1 id="typing-headline" class="text-4xl md:text-6xl font-bold max-w-4xl mx-auto md:mx-0"></h1>
+                     <p class="mt-4 text-lg opacity-0" id="tagline">From Concept to Deployment.!</p>
+                </div>
+            </div>
+            <div class="relative border-grid flex items-center justify-center p-5 order-1 md:order-2">
+                <div class="menu-button" id="menu-button">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="unique-frame">
+                    <img src="static/images/profile.jpg" alt="A photo of Rutwik Muley">
+                </div>
             </div>
         </div>
     </header>
 
-    <section id="about" class="py-24 md:py-32 bg-gray-900">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-semibold text-gray-100 mb-10 text-center animate-on-scroll">About Me</h2>
-             <p class="text-gray-300 text-lg leading-relaxed mb-12 text-center animate-on-scroll" style="transition-delay: 0.1s;">
-                I'm a passionate and curious engineer, driven by a deep interest in software development, AI, and building impactful tech solutions. With a strong foundation in computer science and a growing expertise in full-stack development.<br>
-                This portfolio is a reflection of my journey — showcasing my projects, learnings, and the mindset I bring to every challenge.
-            </p>
-
-            <div class="mt-16 animate-on-scroll text-gray-300" style="transition-delay: 0.2s;">
-                <h3 class="text-2xl font-semibold text-gray-100 mb-10 text-center">My Skills</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-
-                    <div class="space-y-6">
-                        <h4 class="text-xl font-semibold text-accent-300 mb-3 border-b border-gray-700 pb-2">Technical Skills</h4>
-
-                        <div>
-                            <h5 class="font-semibold text-gray-100 mb-2">Programming Languages</h5>
-                            <div class="space-y-1 text-sm text-gray-400">
-                                <p class="flex items-center"><i class="fa-solid fa-code fa-fw mr-2 text-accent-400"></i> C / C++ – Good grasp of programming logic</p>
-                                <p class="flex items-center"><i class="fa-brands fa-python fa-fw mr-2 text-accent-400"></i> Python - Server-side logic and scripts. AI/ML Models</p>
-                                
-                            </div>
-                        </div>
-
-                        <div>
-                            <h5 class="font-semibold text-gray-100 mb-2">Web Development </h5>
-                             <div class="space-y-1 text-sm text-gray-400">
-                                 <p class="flex items-center"><i class="fa-brands fa-html5 fa-fw mr-2 text-accent-400"></i><i class="fa-brands fa-css3-alt fa-fw mr-2 text-accent-400"></i> HTML / CSS – Crafted responsive layouts and styled components for optimal user experience.</p>
-                                 <p class="flex items-center"><i class="fab fa-js fa-fw mr-2 text-accent-400"></i> JavaScript - Implemented dynamic functionalities and interactive features</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h5 class="font-semibold text-gray-100 mb-2">Version Control & Deployment</h5>
-                             <div class="space-y-1 text-sm text-gray-400">
-                                 <p class="flex items-center"><i class="fa-brands fa-git-alt fa-fw mr-2 text-accent-400"></i><i class="fa-brands fa-github fa-fw mr-2 text-accent-400"></i> Git & GitHub - Used for verison control and collaborative development.</p>
-                                 <p class="flex items-center"><img src="static/images/rsz_render.png" alt="Render Deployment Icon" class="bg-gray-400 w-5 h-5 rounded-full text-accent-400 mr-2"> Render - Used for website deployments.</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h5 class="font-semibold text-gray-100 mb-2">Research & Development</h5>
-                             <div class="space-y-1 text-sm text-gray-400">
-                                <p class="flex items-center"><i class="fa-solid fa-brain fa-fw mr-2 text-accent-400"></i> Natural Language Processing</p>
-                                <p class="flex items-center"><i class="fa-solid fa-file-lines fa-fw mr-2 text-accent-400"></i> Academic Writing - &nbsp;<a href="https://ieeexplore.ieee.org/document/10882401" target="_blank" rel="noopener noreferrer" class="nav-link underline hover:text-accent-300">IEEE Paper</a></p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h5 class="font-semibold text-gray-100 mb-2">Tools & Platforms</h5>
-                             <div class="space-y-1 text-sm text-gray-400">
-                                 <p class="flex items-center"><i class="fa-solid fa-laptop-code fa-fw mr-2 text-accent-400"></i> VS Code</p>
-                                 <p class="flex items-center"><i class="fa-solid fa-flask fa-fw mr-2 text-accent-400"></i> Google Colab / Jupyter Notebooks</p>
-                                 <p class="flex items-center"><i class="fa-brands fa-google-drive fa-fw mr-2 text-accent-400"></i> Google Workspace</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="space-y-6">
-                         <h4 class="text-xl font-semibold text-accent-300 mb-3 border-b border-gray-700 pb-2">Soft Skills</h4>
-                         <ul class="list-none space-y-2 text-sm text-gray-300">
-                             <li class="flex items-center"><i class="fa-solid fa-check fa-fw mr-2 text-accent-400"></i> Research and Documentation</li>
-                             <li class="flex items-center"><i class="fa-solid fa-check fa-fw mr-2 text-accent-400"></i> Technical Presentation</li>
-                             <li class="flex items-center"><i class="fa-solid fa-check fa-fw mr-2 text-accent-400"></i> Self-Learning & Initiative</li>
-                             <li class="flex items-center"><i class="fa-solid fa-check fa-fw mr-2 text-accent-400"></i> Team Collaboration</li>
-                         </ul>
-                    </div>
-
-                </div>
-            </div>
-            </div>
-    </section>
-
-    <section id="projects" class="py-24 md:py-32 bg-gray-800">
-  <div class="container mx-auto px-6">
-    <div class="text-center max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-semibold text-gray-100 mb-10 animate-on-scroll">My Projects</h2>
-      <p class="text-gray-300 text-lg mb-16 leading-relaxed animate-on-scroll" style="transition-delay: 0.1s;">
-        A selection of real-world projects that demonstrate my skills in full-stack development and AI research.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-      <div class="project-card bg-gray-700 p-6 rounded-xl border border-gray-600 transition-all duration-300 ease-in-out group animate-on-scroll cursor-pointer" style="transition-delay: 0.2s;">
-        <div class="project-image-container mb-10 rounded-lg ">
-          <img src="https://broadbanddigital.in/static/images/logo.webp" alt="Broadband Digital Website" class="project-image w-full rounded-lg h-52 object-contain bg-white p-3 transition duration-300 group-hover:opacity-95">
-        </div>
-        <h3 class="text-lg font-semibold mb-3 text-gray-100">Broadband Digital</h3>
-        <div class="mb-4 flex flex-wrap gap-2">
-          <span class="text-xs font-medium bg-indigo-900/50 text-indigo-300 px-2.5 py-1 rounded-full">Python</span>
-          <span class="text-xs font-medium bg-pink-900/50 text-pink-300 px-2.5 py-1 rounded-full">Flask</span>
-          <span class="text-xs font-medium bg-yellow-900/50 text-yellow-300 px-2.5 py-1 rounded-full">HTML/CSS</span>
-          <span class="text-xs font-medium bg-blue-900/50 text-blue-300 px-2.5 py-1 rounded-full">MySQL</span>
-        </div>
-        <p class="text-gray-400 text-sm mb-5">
-          Developed and deployed a fully responsive ISP website with a Flask-based backend, user-friendly UI, and admin dashboard for plan management. Delivered end-to-end, including deployment via cPanel.
-        </p>
-        <a href="https://broadbanddigital.in/" target="_blank" rel="noopener noreferrer" class="nav-link inline-flex items-center text-accent-400 font-medium group text-sm p-2">
-          View Live &nbsp
-          <i class="fa-solid fa-arrow-right text-accent-400 group-hover:translate-x-1 transition-transform duration-300"></i> 
-        </a>
-      </div>
-      <div class="hidden project-card bg-gray-700 p-6 rounded-xl border border-gray-600 transition-all duration-300 ease-in-out group animate-on-scroll cursor-pointer" style="transition-delay: 0.3s;">
-        <div class="project-image-container mb-5 rounded-lg">
-          <img src="https://gondi-wordnet.onrender.com/static/images/gondi-logo.png" alt="Gondi WordNet Project" class="project-image w-full h-52 object-contain bg-gray-900 p-6 transition duration-300 group-hover:opacity-95">
-        </div>
-        <h3 class="text-lg font-semibold mb-3 text-gray-100">Gondi WordNet (MahaDict)</h3>
-        <div class="mb-4 flex flex-wrap gap-2">
-          <span class="text-xs font-medium bg-green-900/50 text-green-300 px-2.5 py-1 rounded-full">NLP</span>
-          <span class="text-xs font-medium bg-purple-900/50 text-purple-300 px-2.5 py-1 rounded-full">Python</span>
-          <span class="text-xs font-medium bg-red-900/50 text-red-300 px-2.5 py-1 rounded-full">IEEE</span>
-        </div>
-        <p class="text-gray-400 text-sm mb-5">
-          Co-authored and developed a lexical database for the Gondi language, contributing to linguistic preservation. Published at the 2nd IEEE International Conference on AI & Quantum Computation-Based Sensor Applications – 2024.
-        </p>
-        <div>
-        <a href="https://ieeexplore.ieee.org/document/10882401" target="_blank" rel="noopener noreferrer" class="nav-link inline-flex items-center text-accent-400 font-medium group text-sm p-2">
-          View Publication
-          <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-arrow-right ml-1 transition-transform duration-300 group-hover:translate-x-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        </div>
-        <a href="https://gondi-wordnet.onrender.com/" target="_blank" rel="noopener noreferrer" class="nav-link inline-flex items-center text-accent-400 font-medium group text-sm p-2">
-          View Live
-          <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-arrow-right ml-1 transition-transform duration-300 group-hover:translate-x-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-      </div>
-  </div>
-</section>
-
-    <section id="contact" class="py-8 md:py-12 bg-gray-900">
-        <div class="container mx-auto px-6 text-center max-w-3xl">
-            <h2 class="text-3xl md:text-4xl font-semibold text-gray-100 mb-10 animate-on-scroll">Get In Touch</h2>
-            <p class="text-gray-300 text-lg max-w-xl mx-auto mb-8 leading-relaxed animate-on-scroll" style="transition-delay: 0.1s;">
-                Interested in collaborating?<br>or have a work?<br>Feel free to reach out!
-            </p>
-            <div class="animate-on-scroll space-y-4 sm:space-y-0 sm:space-x-4 sm:inline-flex justify-center" style="transition-delay: 0.2s;">
-                <a href="mailto:rmuley558@gmail.com" class="nav-link cta-button-primary inline-flex items-center justify-center bg-accent-600 text-gray-100 hover:bg-accent-700 px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl text-base transform hover:-translate-y-1 w-full sm:w-auto mb-4 sm:mb-0">
-                    <i class="fa fa-envelope mr-2 text-accent-300"></i>
-                    Send Me an Email
-                </a>
-                <a href="tel:+917058944455" class="nav-link cta-button-primary inline-flex items-center justify-center bg-accent-600 text-gray-100 hover:bg-accent-700 px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl text-base transform hover:-translate-y-1 w-full sm:w-auto">
-                    <i class="fa-solid fa-phone mr-2 text-accent-300"></i>
-                    Call Me
-                </a>
-            </div>
-             <div class="flex justify-center space-x-8 mt-10 animate-on-scroll" style="transition-delay: 0.3s;">
-                 <a href="https://www.linkedin.com/in/rutwik-muley-b20707208" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="nav-link text-gray-400 hover:text-accent-400 transition-all duration-300 transform hover:scale-110 hover:rotate-[-10deg]" title="LinkedIn">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
-                 <a href="https://github.com/Rutwik-M" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="nav-link text-gray-400 hover:text-gray-200 transition-all duration-300 transform hover:scale-110 hover:rotate-[10deg]" title="GitHub">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-1.5 6-6.5.08-1.3-.32-2.7-.98-3.7c.4-.63.6-1.47.4-2.31-.59-.27-1.96.27-3.74 1.5a10.27 10.27 0 0 0-6.32 0C6.94 4.27 5.57 3.77 5 4.04c-.2 1 .0 1.68.4 2.31-.66 1-.98 2.4-.98 3.7 0 5 3 6.5 6 6.5-1 1-1 2.5-1 3.5V22"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                </a>
-                </div>
+    <section class="py-6 bg-black text-white overflow-hidden">
+        <div class="flex whitespace-nowrap">
+            <h3 class="scrolling-text text-2xl md:text-3xl font-bold px-8">DEVELOPER &middot; ENGINEER &middot; CREATOR &middot; PROBLEM SOLVER &middot; DEVELOPER &middot; ENGINEER &middot; CREATOR &middot; PROBLEM SOLVER &middot;</h3>
+            <h3 class="scrolling-text text-2xl md:text-3xl font-bold px-8" aria-hidden="true">DEVELOPER &middot; ENGINEER &middot; CREATOR &middot; PROBLEM SOLVER &middot; DEVELOPER &middot; ENGINEER &middot; CREATOR &middot; PROBLEM SOLVER &middot;</h3>
         </div>
     </section>
 
-    <footer class="bg-gray-950 text-gray-400 py-8 border-t border-gray-700">
-        <div class="container mx-auto px-6 text-center text-sm">
-            <p>&copy; <span id="current-year"></span> Rutwik Muley. All rights reserved.</p>
+    <section id="about" class="py-20 px-4 bg-yellow-300">
+        <div class="container mx-auto grid md:grid-cols-5 gap-8">
+            <div class="md:col-span-2" data-aos="fade-right">
+                <h2 class="text-4xl md:text-5xl font-bold md:sticky top-10">About Me</h2>
+            </div>
+            <div class="md:col-span-3 text-lg leading-relaxed space-y-6" data-aos="fade-up">
+                <p>I'm a passionate and curious engineer from Beed, Maharashtra, driven by a deep interest in software development, AI, and building impactful tech solutions. I thrive in the space between logic and creativity.</p>
+                <p>With a strong foundation in computer science and a growing expertise in full-stack development, this portfolio is a reflection of my journey — showcasing my projects, my process, and the mindset I bring to every challenge.</p>
+                <p class="font-bold">My goal is simple: to build things that are useful, beautiful, and built to last.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="py-20 px-4">
+        <div class="container mx-auto relative">
+            <h2 class="text-5xl md:text-8xl font-bold text-gray-300 absolute -top-16 -left-2 md:-top-8 md:-left-8 select-none z-0" data-aos="fade-up">{Selected Works}</h2>
+            <div class="relative z-10 grid md:grid-cols-2 gap-10">
+                 <div class="project-card mt-12" data-aos="fade-up">
+                    <div class="bg-black text-white p-2 font-mono text-sm">Project_01</div>
+                    <img src="https://broadbanddigital.in/static/images/logo.webp" alt="Broadband Digital" class="w-full h-64 object-contain p-4">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">Broadband Digital</h3>
+                        <p class="mt-2 text-gray-600">A fully responsive ISP website with a Flask-based backend and an intuitive admin dashboard.</p>
+                        <a href="https://broadbanddigital.in/" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Live Project &rarr;</a>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                     <div class="bg-black text-white p-2 font-mono text-sm">Project_02</div>
+                    <img src="https://gondi-wordnet.onrender.com/static/images/gondi-logo.png" alt="Gondi WordNet" class="w-full h-64 object-contain p-4 bg-gray-900">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">Gondi WordNet (MahaDict)</h3>
+                        <p class="mt-2 text-gray-600">Co-authored a lexical database for the Gondi language, contributing to linguistic preservation. Published at an IEEE International Conference.</p>
+                        <a href="https://ieeexplore.ieee.org/document/10882401" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Publication &rarr;</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <section id="toolkit" class="py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center" data-aos="fade-up">My Toolkit</h2>
+            <div class="hidden md:grid md:grid-cols-2 border-2 border-black" data-aos="fade-up" data-aos-delay="200">
+                <div class="toolkit-list font-mono grid grid-cols-1 md:grid-cols-2">
+                    <div class="toolkit-list-item pre-selected" data-visual="python">
+                        <a href="#"><span class="text-gray-400 mr-4">01</span>Python</a>
+                    </div>
+                    <div class="toolkit-list-item" data-visual="cpp">
+                        <a href="#"><span class="text-gray-400 mr-4">02</span>C / C++</a>
+                    </div>
+                    <div class="toolkit-list-item" data-visual="web">
+                        <a href="#"><span class="text-gray-400 mr-4">03</span>HTML/CSS/JS</a>
+                    </div>
+                    <div class="toolkit-list-item" data-visual="git">
+                        <a href="#"><span class="text-gray-400 mr-4">04</span>Git & GitHub</a>
+                    </div>
+                    <div class="toolkit-list-item" data-visual="render">
+                        <a href="#"><span class="text-gray-400 mr-4">05</span>Render</a>
+                    </div>
+                    <div class="toolkit-list-item" data-visual="nlp">
+                        <a href="#"><span class="text-gray-400 mr-4">06</span>NLP</a>
+                    </div>
+                    <div class="toolkit-list-item" data-visual="academic">
+                        <a href="#"><span class="text-gray-400 mr-4">07</span>Academic Writing</a>
+                    </div>
+                    <div class="toolkit-list-item" data-visual="vscode">
+                        <a href="#"><span class="text-gray-400 mr-4">08</span>VS Code</a>
+                    </div>
+                    <div class="toolkit-list-item" data-visual="colab">
+                        <a href="#"><span class="text-gray-400 mr-4">09</span>Google Colab</a>
+                    </div>
+                    <div class="toolkit-list-item" data-visual="workspace">
+                        <a href="#"><span class="text-gray-400 mr-4">10</span>Google Workspace</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center justify-center border-l-2 border-black">
+                    <div id="python-visual" class="toolkit-visual is-active font-mono">
+                        <span class="text-purple-400">def</span> <span class="text-green-400">greet</span>(<span class="text-orange-400">name</span>):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">return</span> <span class="text-yellow-300">f"Hello, </span><span class="text-blue-400">{name}</span><span class="text-yellow-300">!"</span>
+                    </div>
+                    <div id="cpp-visual" class="toolkit-visual font-mono">
+                        <span class="text-purple-400">#include</span> <span class="text-yellow-300">&lt;iostream&gt;</span><br><br>
+                        <span class="text-blue-400">int</span> <span class="text-green-400">main</span>() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; "Hello, World!";<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">return</span> 0;<br>
+                        }
+                    </div>
+                     <div id="web-visual" class="toolkit-visual font-mono">
+                        &lt;<span class="text-red-400">div</span> <span class="text-orange-400">class</span>=<span class="text-yellow-300">"container"</span>&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="text-red-400">h1</span>&gt;Hello World&lt;/<span class="text-red-400">h1</span>&gt;<br>
+                        &lt;/<span class="text-red-400">div</span>&gt;
+                    </div>
+                    <div id="git-visual" class="toolkit-visual font-mono">
+                        $ git checkout -b new-feature<br>
+                        $ git add .<br>
+                        $ git commit -m "feat: implement magic"<br>
+                        $ git push origin new-feature
+                    </div>
+                    <div id="render-visual" class="toolkit-visual font-mono">
+                        &gt; Deploying to Render...<br>
+                        &gt; Build successful.<br>
+                        &gt; Service is live.
+                    </div>
+                    <div id="nlp-visual" class="toolkit-visual font-mono">
+                        <span class="text-purple-400">import</span> spacy<br>
+                        nlp = spacy.load(<span class="text-yellow-300">"en_core_web_sm"</span>)
+                    </div>
+                    <div id="academic-visual" class="toolkit-visual font-mono">
+                        <span class="text-purple-400">\documentclass</span>{IEEEtran}<br>
+                        <span class="text-purple-400">\title</span>{An Awesome Paper}<br>
+                        <span class="text-purple-400">\author</span>{Rutwik Muley}
+                    </div>
+                    <div id="vscode-visual" class="toolkit-visual font-mono">
+                        {<br>
+                        &nbsp;&nbsp;<span class="text-blue-400">"editor.fontSize"</span>: <span class="text-orange-400">14</span>,<br>
+                        &nbsp;&nbsp;<span class="text-blue-400">"theme"</span>: <span class="text-yellow-300">"BrutalistDark"</span><br>
+                        }
+                    </div>
+                    <div id="colab-visual" class="toolkit-visual font-mono">
+                        !pip install pandas
+                    </div>
+                    <div id="workspace-visual" class="toolkit-visual font-mono">
+                        [Docs] [Sheets] [Slides] [Drive]
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden font-mono flex flex-wrap justify-center items-center gap-x-4 gap-y-6 p-4" data-aos="fade-up">
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black">Python</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black -rotate-6">C/C++</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black translate-y-2">HTML/CSS/JS</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black rotate-3">Git & GitHub</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black -rotate-2 translate-y-1">Render</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black">NLP</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black rotate-6">Academic Writing</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black">VS Code</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black -translate-y-2">Google Colab</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black rotate-2">Google Workspace</span>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-12 md:py-24 px-4">
+        <div class="container mx-auto text-center" data-aos="fade-up">
+            <h2 class="text-5xl md:text-8xl font-bold">Let's Talk.</h2>
+            <a href="mailto:rmuley558@gmail.com" class="text-xl md:text-3xl font-mono mt-8 inline-block relative hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">
+                rmuley558@gmail.com
+            </a>
+            <div class="mt-12 flex justify-center space-x-8 font-mono">
+                <a href="https://www.linkedin.com/in/rutwik-muley-b20707208" target="_blank" class="hover:text-yellow-500">LinkedIn</a>
+                <a href="https://github.com/Rutwik-M" target="_blank" class="hover:text-yellow-500">GitHub</a>
+                <a href="tel:+917058944455" class="hover:text-yellow-500">Phone</a>
+            </div>
         </div>
     </footer>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+
+        const cursor = document.querySelector('.custom-cursor');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        const speed = 1;
+
+        function animateCursor() {
+            const distX = mouseX - cursorX;
+            const distY = mouseY - cursorY;
+            cursorX += (distX * speed);
+            cursorY += (distY * speed);
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            animateCursor();
+        }
+
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        document.querySelectorAll('a, button, .project-card, .menu-button, .toolkit-list-item').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+        });
+
+        // Menu Toggle
+        const menuButton = document.getElementById('menu-button');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const menuLinks = menuOverlay.querySelectorAll('a');
+
         menuButton.addEventListener('click', () => {
-            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-            mobileMenu.classList.toggle('hidden');
-            menuButton.setAttribute('aria-expanded', String(!isExpanded)); // Ensure boolean is string
+            menuButton.classList.toggle('is-active');
+            menuOverlay.classList.toggle('is-active');
         });
-        mobileMenu.querySelectorAll('a').forEach(link => {
+
+        menuLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                    menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.classList.remove('is-active');
+                menuOverlay.classList.remove('is-active');
+            });
+        });
+        
+        // Toolkit Visualizer
+        const toolkitItems = document.querySelectorAll('.toolkit-list-item');
+        const toolkitVisuals = document.querySelectorAll('.toolkit-visual');
+
+        toolkitItems.forEach(item => {
+            const anchor = item.querySelector('a');
+            if(anchor) {
+                 anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                });
+            }
+
+            item.addEventListener('mouseenter', () => {
+                document.querySelector('.toolkit-list-item.pre-selected')?.classList.remove('pre-selected');
+                const visualId = item.getAttribute('data-visual');
+                toolkitVisuals.forEach(visual => {
+                    visual.classList.remove('is-active');
+                });
+                const targetVisual = document.getElementById(`${visualId}-visual`);
+                if (targetVisual) {
+                    targetVisual.classList.add('is-active');
                 }
             });
         });
 
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        // Typing Animation
+        const headline = document.getElementById('typing-headline');
+        const tagline = document.getElementById('tagline');
+        const textToType = "Creative Engineer Building for the Web.";
+        let i = 0;
 
-        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-        const observerCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        };
-        const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
-        document.querySelectorAll('.animate-on-scroll').forEach(element => scrollObserver.observe(element));
-
-        const cursorDot = document.getElementById('cursor-dot');
-        const supportsHover = window.matchMedia('(hover: hover)').matches;
-
-        if (cursorDot) { // Check if cursorDot element exists
-            if (supportsHover) {
-                document.body.style.cursor = 'none'; // Hide system cursor only if custom cursor is active
-                window.addEventListener('mousemove', (e) => {
-                    cursorDot.style.left = `${e.clientX}px`;
-                    cursorDot.style.top = `${e.clientY}px`;
-                    cursorDot.style.display = 'block'; // Make sure it's visible when moving
-                });
-                document.querySelectorAll('a, button, .cursor-pointer, .project-card, .group').forEach(el => {
-                    el.addEventListener('mouseenter', () => cursorDot.classList.add('hovered'));
-                    el.addEventListener('mouseleave', () => cursorDot.classList.remove('hovered'));
-                });
-                 // Ensure cursor dot is initially visible on hover devices
-                cursorDot.style.display = 'block';
-
+        function typeWriter() {
+            if (i < textToType.length) {
+                headline.innerHTML = textToType.substring(0, i + 1) + '<span class="typing-cursor"></span>';
+                i++;
+                setTimeout(typeWriter, 100);
             } else {
-                 cursorDot.style.display = 'none'; // Explicitly hide custom cursor
-                 document.body.style.cursor = 'auto'; // Show default system cursor
+                headline.innerHTML = textToType + '<span class="typing-cursor"></span>';
+                tagline.style.transition = 'opacity 0.5s ease';
+                tagline.style.opacity = '1';
             }
-        } else {
-            // Fallback if cursorDot is not found - ensure default cursor is visible
-             document.body.style.cursor = 'auto';
         }
-
-
-        const canvas = document.getElementById('hero-canvas');
-        if (canvas) { // Check if canvas element exists
-            const ctx = canvas.getContext('2d');
-            let particles = [];
-            let animationFrameId;
-            function resizeCanvas() {
-                canvas.width = canvas.offsetWidth * window.devicePixelRatio;
-                canvas.height = canvas.offsetHeight * window.devicePixelRatio;
-                ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-            }
-            class Particle {
-                constructor(x, y) {
-                    this.x = x; this.y = y;
-                    this.size = Math.random() * 1.5 + 0.5;
-                    this.speedX = Math.random() * 0.4 - 0.2;
-                    this.speedY = Math.random() * 0.4 - 0.2;
-                    this.color = `rgba(167, 139, 250, ${Math.random() * 0.4 + 0.1})`;
-                }
-                update() {
-                    this.x += this.speedX; this.y += this.speedY;
-                    const scaledWidth = canvas.width / window.devicePixelRatio;
-                    const scaledHeight = canvas.height / window.devicePixelRatio;
-                    if (this.x < 0) this.x = scaledWidth; if (this.x > scaledWidth) this.x = 0;
-                    if (this.y < 0) this.y = scaledHeight; if (this.y > scaledHeight) this.y = 0;
-                }
-                draw() {
-                    ctx.fillStyle = this.color; ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
-                }
-            }
-            function initParticles() {
-                particles = [];
-                const scaledWidth = canvas.width / window.devicePixelRatio;
-                const scaledHeight = canvas.height / window.devicePixelRatio;
-                const numberOfParticles = Math.floor(scaledWidth * scaledHeight / 15000);
-                for (let i = 0; i < numberOfParticles; i++) {
-                    particles.push(new Particle(Math.random() * scaledWidth, Math.random() * scaledHeight));
-                }
-            }
-            function animateParticles() {
-                const scaledWidth = canvas.width / window.devicePixelRatio;
-                const scaledHeight = canvas.height / window.devicePixelRatio;
-                ctx.clearRect(0, 0, scaledWidth, scaledHeight);
-                particles.forEach(particle => { particle.update(); particle.draw(); });
-                animationFrameId = requestAnimationFrame(animateParticles);
-            }
-            function startAnimation() {
-                resizeCanvas(); initParticles();
-                if (animationFrameId) cancelAnimationFrame(animationFrameId);
-                animateParticles();
-            }
-            function debounce(func, wait = 100, immediate = false) {
-                let timeout;
-                return function() {
-                    const context = this, args = arguments;
-                    const later = function() { timeout = null; if (!immediate) func.apply(context, args); };
-                    const callNow = immediate && !timeout; clearTimeout(timeout);
-                    timeout = setTimeout(later, wait); if (callNow) func.apply(context, args);
-                };
-            }
-            window.addEventListener('load', startAnimation);
-            window.addEventListener('resize', debounce(startAnimation, 250));
-        }
+        
+        window.addEventListener('load', () => {
+            setTimeout(typeWriter, 2);
+        });
     </script>
-
 </body>
 </html>
