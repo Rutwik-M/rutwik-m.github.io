@@ -38,7 +38,7 @@
         }
         .custom-cursor.hovered {
             background-color: #FFD700;
-            transform: scale(1.5);
+            transform: scale(1.2);
         }
         .border-grid {
             border: 1px solid #d1d1d1;
@@ -351,52 +351,53 @@
                 </div>
                 <div class="hidden md:flex items-center justify-center border-l-2 border-black">
                     <div id="python-visual" class="toolkit-visual is-active font-mono">
-                        <span class="text-purple-400">def</span> <span class="text-green-400">greet</span>(<span class="text-orange-400">name</span>):<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">return</span> <span class="text-yellow-300">f"Hello, </span><span class="text-blue-400">{name}</span><span class="text-yellow-300">!"</span>
+                        <span class="text-purple-400">def</span> <span class="text-green-400">brew_coffee</span>(<span class="text-orange-400">strength</span>="strong"):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">return</span> <span class="text-yellow-300">f"A </span><span class="text-blue-400">{strength}</span><span class="text-yellow-300"> cup of coffee is ready!"</span>
                     </div>
                     <div id="cpp-visual" class="toolkit-visual font-mono">
                         <span class="text-purple-400">#include</span> <span class="text-yellow-300">&lt;iostream&gt;</span><br><br>
-                        <span class="text-blue-400">int</span> <span class="text-green-400">main</span>() {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; "Hello, World!";<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">return</span> 0;<br>
+                        <span class="text-blue-400">void</span> <span class="text-green-400">unleash_chaos</span>() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; "Hello, entropy!";<br>
                         }
                     </div>
                      <div id="web-visual" class="toolkit-visual font-mono">
-                        &lt;<span class="text-red-400">div</span> <span class="text-orange-400">class</span>=<span class="text-yellow-300">"container"</span>&gt;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="text-red-400">h1</span>&gt;Hello World&lt;/<span class="text-red-400">h1</span>&gt;<br>
-                        &lt;/<span class="text-red-400">div</span>&gt;
+                        &lt;<span class="text-red-400">marquee</span>&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="text-red-400">h1</span>&gt;The 90s are back!&lt;/<span class="text-red-400">h1</span>&gt;<br>
+                        &lt;/<span class="text-red-400">marquee</span>&gt;
                     </div>
                     <div id="git-visual" class="toolkit-visual font-mono">
-                        $ git checkout -b new-feature<br>
                         $ git add .<br>
-                        $ git commit -m "feat: implement magic"<br>
-                        $ git push origin new-feature
+                        $ git commit -m "feat: It works! (I think)"<br>
+                        $ git push --force
                     </div>
                     <div id="render-visual" class="toolkit-visual font-mono">
-                        &gt; Deploying to Render...<br>
-                        &gt; Build successful.<br>
+                        &gt; Deploying...<br>
+                        &gt; Waking up the ones and zeros...<br>
                         &gt; Service is live.
                     </div>
                     <div id="nlp-visual" class="toolkit-visual font-mono">
                         <span class="text-purple-400">import</span> spacy<br>
-                        nlp = spacy.load(<span class="text-yellow-300">"en_core_web_sm"</span>)
+                        nlp = spacy.load(<span class="text-yellow-300">"en_core_web_sm"</span>)<br>
+                        doc = nlp(<span class="text-yellow-300">"Is this the real life?"</span>)
                     </div>
                     <div id="academic-visual" class="toolkit-visual font-mono">
-                        <span class="text-purple-400">\documentclass</span>{IEEEtran}<br>
-                        <span class="text-purple-400">\title</span>{An Awesome Paper}<br>
-                        <span class="text-purple-400">\author</span>{Rutwik Muley}
+                        <span class="text-purple-400">\documentclass</span>{article}<br>
+                        <span class="text-purple-400">\begin</span>{document}<br>
+                        My brain is just a vessel for caffeine.<br>
+                        <span class="text-purple-400">\end</span>{document}
                     </div>
                     <div id="vscode-visual" class="toolkit-visual font-mono">
                         {<br>
-                        &nbsp;&nbsp;<span class="text-blue-400">"editor.fontSize"</span>: <span class="text-orange-400">14</span>,<br>
-                        &nbsp;&nbsp;<span class="text-blue-400">"theme"</span>: <span class="text-yellow-300">"BrutalistDark"</span><br>
+                        &nbsp;&nbsp;<span class="text-blue-400">"workbench.colorTheme"</span>: <span class="text-yellow-300">"Dracula"</span>,<br>
+                        &nbsp;&nbsp;<span class="text-blue-400">"editor.fontFamily"</span>: <span class="text-yellow-300">"Comic Sans MS"</span><br>
                         }
                     </div>
                     <div id="colab-visual" class="toolkit-visual font-mono">
-                        !pip install pandas
+                        !pip install antigravity
                     </div>
                     <div id="workspace-visual" class="toolkit-visual font-mono">
-                        [Docs] [Sheets] [Slides] [Drive]
+                        [ ] Finish to-do list<br>
+                        [x] Stare into the void
                     </div>
                 </div>
             </div>
