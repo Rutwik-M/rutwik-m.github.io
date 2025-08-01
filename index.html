@@ -184,7 +184,7 @@
         }
         @media(min-width: 768px) {
             
-             .toolkit-list-item:nth-child(9), .toolkit-list-item:nth-child(10) {
+             .toolkit-list-item:nth-child(12), .toolkit-list-item:nth-child(13) {
                 border-bottom: none;
             }
         }
@@ -336,7 +336,7 @@
                         <a href="#"><span class="text-gray-400 mr-4">04</span>Git & GitHub</a>
                     </div>
                     <div class="toolkit-list-item" data-visual="render">
-                        <a href="#"><span class="text-gray-400 mr-4">05</span>Render</a>
+                        <a href="#"><span class="text-gray-400 mr-4">05</span>Render | Vercel</a>
                     </div>
                     <div class="toolkit-list-item" data-visual="nlp">
                         <a href="#"><span class="text-gray-400 mr-4">06</span>NLP</a>
@@ -352,6 +352,15 @@
                     </div>
                     <div class="toolkit-list-item" data-visual="workspace">
                         <a href="#"><span class="text-gray-400 mr-4">10</span>Google Workspace</a>
+                    </div>
+                    <div class="toolkit-list-item" data-visual="supabase">
+                        <a href="#"><span class="text-gray-400 mr-4">11</span>Supabase</a>
+                    </div>
+                    <div class="toolkit-list-item" data-visual="postgresql">
+                        <a href="#"><span class="text-gray-400 mr-4">12</span>PostgreSQL</a>
+                    </div>
+                     <div class="toolkit-list-item" data-visual="sql">
+                        <a href="#"><span class="text-gray-400 mr-4">13</span>SQL</a>
                     </div>
                 </div>
                 <div class="hidden md:flex items-center justify-center border-l-2 border-black">
@@ -404,6 +413,16 @@
                         [ ] Finish to-do list<br>
                         [x] Stare into the void
                     </div>
+                    <div id="supabase-visual" class="toolkit-visual font-mono">
+                        <span class="text-purple-400">import</span> { createClient } <span class="text-purple-400">from</span> <span class="text-yellow-300">'@supabase/supabase-js'</span><br>
+                        <span class="text-green-400">const</span> supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
+                    </div>
+                    <div id="postgresql-visual" class="toolkit-visual font-mono">
+                        <span class="text-blue-400">SELECT</span> <span class="text-yellow-300">'awesome_data'</span> <span class="text-blue-400">FROM</span> projects <span class="text-blue-400">WHERE</span> is_cool = <span class="text-orange-400">true</span>;
+                    </div>
+                    <div id="sql-visual" class="toolkit-visual font-mono">
+                       <span class="text-blue-400">SELECT</span> beer <span class="text-blue-400">FROM</span> fridge;
+                    </div>
                 </div>
             </div>
             <div class="md:hidden font-mono flex flex-wrap justify-center items-center gap-x-4 gap-y-6 p-4" data-aos="fade-up">
@@ -417,6 +436,9 @@
                 <span class="bg-gray-200 py-2 px-4 border-2 border-black">VS Code</span>
                 <span class="bg-gray-200 py-2 px-4 border-2 border-black -translate-y-2">Google Colab</span>
                 <span class="bg-gray-200 py-2 px-4 border-2 border-black rotate-2">Google Workspace</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black">Supabase</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black -rotate-3">PostgreSQL</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black translate-y-1">SQL</span>
             </div>
         </div>
     </section>
