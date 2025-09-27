@@ -208,7 +208,7 @@
         }
         @media(min-width: 768px) {
             
-             .toolkit-list-item:nth-child(12), .toolkit-list-item:nth-child(13) {
+             .toolkit-list-item:nth-child(13), .toolkit-list-item:nth-child(14) {
                 border-bottom: none;
             }
         }
@@ -391,9 +391,18 @@
     <section id="work" class="py-20 px-4">
         <div class="container mx-auto relative">
             <h2 class="text-5xl md:text-8xl font-bold text-gray-300 absolute -top-16 -left-2 md:-top-8 md:-left-8 select-none z-0" data-aos="fade-up">{Selected Works}</h2>
-            <div class="relative z-10 grid md:grid-cols-2 gap-10">
-                 <div class="project-card mt-12" data-aos="fade-up">
+            <div class="relative z-10 grid md:grid-cols-3 gap-10">
+                <div class="project-card mt-12" data-aos="fade-up">
                     <div class="bg-black text-white p-2 font-mono text-sm">Project_01</div>
+                    <img src="https://www.note-deck.app/social-preview.png" alt="Broadband Digital" class="w-full h-64 object-contain p-4 bg-gray-900">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">NoteDeck</h3>
+                        <p class="mt-2 text-gray-600">Create, share, and study flashcards with NoteDeck, the AI-powered learning platform. Turn your notes into interactive decks in seconds.</p>
+                        <a href="https://www.note-deck.app/" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Live Project &rarr;</a>
+                    </div>
+                </div> 
+                <div class="project-card mt-12" data-aos="fade-up">
+                    <div class="bg-black text-white p-2 font-mono text-sm">Project_02</div>
                     <img src="https://broadbanddigital.in/static/images/logo.webp" alt="Broadband Digital" class="w-full h-64 object-contain p-4">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold">Broadband Digital</h3>
@@ -402,7 +411,7 @@
                     </div>
                 </div>
                 <div class="project-card mt-4" data-aos="fade-up" data-aos-delay="200">
-                     <div class="bg-black text-white p-2 font-mono text-sm">Project_02</div>
+                     <div class="bg-black text-white p-2 font-mono text-sm">Project_03</div>
                     <img src="https://gondi-wordnet.onrender.com/static/images/gondi-logo.webp" alt="Gondi WordNet" class="w-full h-64 object-contain p-4 bg-gray-900">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold">Gondi WordNet (MahaDict)</h3>
@@ -411,12 +420,20 @@
                         <a href="https://gondi-wordnet.onrender.com/" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Live Project &rarr;</a>
                     </div>
                 </div>
-                
+                <div class="project-card mt-12" data-aos="fade-up" data-aos-delay="300">
+                     <div class="bg-black text-white p-2 font-mono text-sm">Project_04</div>
+                    <img src="static/images/cube-runner.png" alt="Endless Cube Runner Game" class="w-full h-64 object-cover p-4 bg-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">Endless Cube Runner</h3>
+                        <p class="mt-2 text-gray-600">Engineered a 3D endless runner game in Unity3D/C#, handling everything from physics to UI. Deployed on itch.io within a one-week timeframe[cite: 23, 24].</p>
+                        <a href="#" target="_blank" class="inline-block mt-4 font-bold hover:underline">View on Itch.io &rarr;</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     
-    <section id="toolkit" class="py-20 px-4">
+    <section id="toolkit" class="mt-4 mb-12 px-4">
         <div class="container mx-auto">
             <h2 class="text-4xl font-bold mb-12 text-center" data-aos="fade-up"># My Toolkit</h2>
             <div class="hidden md:grid md:grid-cols-2 border-2 border-black" data-aos="fade-up" data-aos-delay="200">
@@ -460,6 +477,9 @@
                      <div class="toolkit-list-item" data-visual="sql">
                         <a href="#"><span class="text-gray-400 mr-4">13</span>SQL</a>
                     </div>
+                    <div class="toolkit-list-item" data-visual="tailwind">
+                        <a href="#"><span class="text-gray-400 mr-4">14</span>Tailwind CSS</a>
+                    </div>  
                 </div>
                 <div class="hidden md:flex items-center justify-center border-l-2 border-black">
                     <div id="python-visual" class="toolkit-visual is-active font-mono">
@@ -521,6 +541,11 @@
                     <div id="sql-visual" class="toolkit-visual font-mono">
                        <span class="text-blue-400">SELECT</span> beer <span class="text-blue-400">FROM</span> fridge;
                     </div>
+                    <div id="tailwind-visual" class="toolkit-visual font-mono">
+    &lt;<span class="text-red-400">div</span> <span class="text-green-400">class</span>="<span class="text-yellow-300">bg-sky-500 p-4</span>"&gt;<br>
+    &nbsp;&nbsp;Utility-first CSS is awesome!<br>
+    &lt;/<span class="text-red-400">div</span>&gt;
+</div>
                 </div>
             </div>
             <div class="md:hidden font-mono flex flex-wrap justify-center items-center gap-x-4 gap-y-6 p-4" data-aos="fade-up">
@@ -537,6 +562,7 @@
                 <span class="bg-gray-200 py-2 px-4 border-2 border-black">Supabase</span>
                 <span class="bg-gray-200 py-2 px-4 border-2 border-black -rotate-3">PostgreSQL</span>
                 <span class="bg-gray-200 py-2 px-4 border-2 border-black translate-y-1">SQL</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black rotate-2">Tailwind CSS</span>
             </div>
         </div>
     </section>
