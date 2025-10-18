@@ -307,6 +307,39 @@
             width: 1.5rem;
             height: 1.5rem;
         }
+
+        /* Brutalist Form Styles */
+        .form-input {
+            width: 100%;
+            background-color: transparent;
+            border: 2px solid #111;
+            padding: 0.75rem 1rem;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border-radius: 0; /* Ensures sharp edges */
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #FFD700; /* Your highlight color */
+            background-color: #fff; /* Optional: light bg on focus */
+            box-shadow: 0 0 0 1px rgba(255, 215, 0, 0.4); /* Yellow glow */
+        }
+        textarea.form-input {
+            resize: vertical; /* Allow vertical resize only */
+            min-height: 120px;
+        }
+        /* Custom class to hide elements on mobile */
+        .hide-on-mobile {
+            display: none !important; /* Use !important to ensure it overrides other styles */
+        }
+
+        /* This is Tailwind's default 'md' breakpoint (768px) */
+        @media (min-width: 768px) {
+            .hide-on-mobile {
+                display: inline-block !important; /* Show it on 'md' screens and larger */
+            }
+        }
     </style>
 
    <script type="application/ld+json">
@@ -372,7 +405,7 @@
     </div>
 
     <header class="min-h-screen relative p-4">
-        <div class="absolute top-8 left-8 font-mono text-sm md:text-lg z-10">Rutwik // Portfolio</div>
+        <div class="absolute top-8 left-8 font-mono text-sm md:text-lg z-10 hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">Rutwik // Portfolio</div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-full min-h-screen">
             <div class="md:col-span-2 border-grid flex items-center justify-center md:justify-start text-center md:text-left p-8 relative overflow-hidden order-2 md:order-1">
                 <div class="absolute top-8 right-8 hidden md:flex space-x-6 z-20">
@@ -449,7 +482,7 @@
                 <div class="bg-black text-white p-2 font-mono text-sm">Project_01</div>
                 <img src="https://www.note-deck.app/social-preview.png" alt="NoteDeck" class="w-full h-64 object-contain p-4 bg-gray-900">
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold">NoteDeck</h3>
+                    <h3 class="text-2xl font-bold inline-block relative hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">NoteDeck</h3>
                     <p class="mt-2 text-gray-600">Built to solve student information overload. NoteDeck is a full-stack SaaS that uses AI LLM models to instantly generate interactive flashcards from user notes, PDFs, and web articles. Currently used by over <b>350+</b> users with <b>580+</b> decks.</p>
                     
                     <div class="mt-4 flex flex-wrap gap-3" title="Tech Stack">
@@ -470,7 +503,7 @@
                 <div class="bg-black text-white p-2 font-mono text-sm">Project_02</div>
                 <img src="https://broadbanddigital.in/static/images/logo.webp" alt="Broadband Digital" class="w-full h-64 object-contain p-4">
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold">Broadband Digital</h3>
+                    <h3 class="text-2xl font-bold inline-block relative hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">Broadband Digital</h3>
                     <p class="mt-2 text-gray-600">A full-stack solution for a local ISP. The site features a custom Flask-based admin dashboard for managing users and plans, and a custom payment gateway integration for payments, increasing their online sales conversion.</p>
                     
                     <div class="mt-4 flex flex-wrap gap-3" title="Tech Stack">
@@ -491,7 +524,7 @@
                  <div class="bg-black text-white p-2 font-mono text-sm">Project_03</div>
                 <img src="https://gondi-wordnet.onrender.com/static/images/gondi-logo.webp" alt="Gondi WordNet" class="w-full h-64 object-contain p-4 bg-gray-900">
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold">Gondi WordNet (MahaDict)</h3>
+                    <h3 class="text-2xl font-bold inline-block relative hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">Gondi WordNet (MahaDict)</h3>
                     <p class="mt-2 text-gray-600">A significant NLP and data science project to help preserve the endangered Gondi language. I co-authored the lexical database and models, culminating in a peer-reviewed publication at an IEEE International Conference.</p>
                     
                     <div class="mt-4 flex flex-wrap gap-3 items-center" title="Tech Stack">
@@ -520,7 +553,7 @@
                  <div class="bg-black text-white p-2 font-mono text-sm">Project_04</div>
                 <img src="static/images/cube-runner.webp" alt="Endless Cube Runner Game" class="w-full h-64 object-cover p-4 bg-gray-100">
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold">Endless Cube Runner</h3>
+                    <h3 class="text-2xl font-bold inline-block relative hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">Endless Cube Runner</h3>
                     <p class="mt-2 text-gray-600">Engineered a 3D endless runner game in Unity3D/C#, handling everything from physics to UI. Deployed on itch.io within a one-week timeframe.</p>
                     
                     <div class="mt-4 flex flex-wrap gap-3" title="Tech Stack">
@@ -702,21 +735,82 @@
         </div>
     </section>
 
-    <footer id="contact" class="py-8 md:py-24 px-4">
-        <div class="container mx-auto text-center" data-aos="fade-up">
-            <h2 class="text-5xl md:text-8xl font-bold">Let's Talk.</h2>
-            <a href="mailto:rmuley558@gmail.com" class="text-xl md:text-3xl font-mono mt-8 inline-block relative hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">
-                rmuley558@gmail.com
-            </a>
-            <div class="mt-12 flex justify-center space-x-8 font-mono">
-                <a href="https://www.linkedin.com/in/rutwik-muley-b20707208" target="_blank" class="hover:text-yellow-500">LinkedIn</a>
-                <a href="https://github.com/Rutwik-M" target="_blank" class="hover:text-yellow-500">GitHub</a>
-                <a href="tel:+917058944455" class="hover:text-yellow-500">Phone</a>
+    <footer id="contact" class="py-12 px-4">
+    <div class="container mx-auto text-center" data-aos="fade-up">
+        <h2 class="text-5xl md:text-8xl font-bold">Let's Talk.</h2>
+        <p class="text-lg md:text-xl font-mono mt-8 mb-8 max-w-2xl mx-auto">
+            Have a project in mind, a question, or just want to connect?
+            Send me a message, or let's connect on <a href="#Socials" class="hover:bg-yellow-300 hover:text-black">social's</a> below.
+        </p>
+
+        <form 
+            action="https://formspree.io/f/mvgwypyq"  
+            method="POST" 
+            class="max-w-3xl mx-auto text-left"
+        >
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="name" class="block text-sm font-mono font-bold uppercase mb-2 ml-1 hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">Full Name</label>
+                    <input 
+                        type="text" 
+                        name="name" 
+                        id="name" 
+                        required 
+                        class="form-input"
+                    >
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-mono font-bold uppercase mb-2 ml-1 hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">Email</label>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        id="email" 
+                        required 
+                        class="form-input"
+                    >
+                </div>
             </div>
-            <div class="mt-10 text-sm md:text-base text-gray-600">
-                <p>&copy; 2024-25 Rutwik Muley.<br> All Rights Reserved.</p>
+
+            <div class="mt-6">
+                <label for="message" class="block text-sm font-mono font-bold uppercase mb-2 ml-1 hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">Message</label>
+                <textarea 
+                    name="message" 
+                    id="message" 
+                    rows="5" 
+                    required 
+                    class="form-input"
+                ></textarea>
             </div>
+
+            <div class="mt-8 text-center flex items-center justify-center gap-4">
+    <button 
+        type="submit" 
+        class="inline-block bg-black text-white font-mono py-3 px-12 border-2 border-black hover:bg-yellow-300 hover:text-black transition-all duration-300 text-lg font-bold"
+    >
+        Send Message &rarr;
+    </button>
+    
+    <span class="v-separator hide-on-mobile"></span>
+    
+    <a 
+        href="#Socials" 
+        class="inline-block bg-black text-white font-mono py-3 px-12 border-2 border-black hover:bg-yellow-300 hover:text-black transition-all duration-300 text-lg font-bold hide-on-mobile"
+    >
+        Socials &darr;
+    </a>
+</div>
+        </form>
+        <div id = "Socials" class="mt-10 flex justify-center space-x-8 font-mono">
+            <a href="https://www.linkedin.com/in/rutwik-muley-b20707208" target="_blank" class="hover:text-yellow-500">LinkedIn</a>
+            <a href="https://github.com/Rutwik-M" target="_blank" class="hover:text-yellow-500">GitHub</a>
+            <a href="tel:+917058944455" class="hover:text-yellow-500">Phone</a>
+            <a href="mailto:rmuley558@gmail.com" class="hover:text-yellow-500">Email</a>
         </div>
+        <div class="mt-10 text-sm md:text-base text-gray-600">
+            <p>&copy; 2024-25 Rutwik Muley.<br> All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
     </footer>
     <a href="static/resume/Rutwik's_Resume.pdf" download id="resume-toast" class="resume-toast">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
