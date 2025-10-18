@@ -269,6 +269,37 @@
             html {
       scroll-behavior: smooth;
     }
+    /* Resume Toast Notification */
+        .resume-toast {
+            position: fixed;
+            bottom: -100px; /* Start off-screen */
+            right: 2rem;
+            background-color: #111;
+            color: #EAEAEA;
+            font-family: 'Space Mono', monospace;
+            padding: 1rem 1.5rem;
+            border-radius: 2px;
+            border: 2px solid #EAEAEA;
+            z-index: 9990;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .resume-toast.show {
+            bottom: 2rem; /* Slide in */
+        }
+        .resume-toast:hover {
+            background-color: #FFD700;
+            color: #111;
+            border-color: #111;
+        }
+        .resume-toast svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     </style>
 
     <script type="application/ld+json">
@@ -681,6 +712,12 @@
             </div>
         </div>
     </footer>
+    <a href="static/resume/Rutwik's_Resume.pdf" download id="resume-toast" class="resume-toast">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+    </svg>
+    Click to Download My Resume
+</a>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -801,6 +838,28 @@
         window.addEventListener('load', () => {
             setTimeout(typeWriter, 0);
         });
+
+        // Resume Toast Notification
+        window.addEventListener('load', () => {
+            // Check if user has seen the toast before
+            if (!localStorage.getItem('resumeToastShown')) {
+                const toast = document.getElementById('resume-toast');
+                
+                // Show the toast after 1.5 seconds
+                setTimeout(() => {
+                    toast.classList.add('show');
+                }, 1500);
+
+                // Hide the toast after 5 more seconds
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 6500); // 1500 + 5000
+
+                // Mark as shown so it doesn't show again
+                localStorage.setItem('resumeToastShown', 'true');
+            }
+        });
     </script>
+    
 </body>
 </html>
