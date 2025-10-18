@@ -276,11 +276,13 @@
             html {
       scroll-behavior: smooth;
     }
-    /* Resume Toast Notification */
+    /* Resume Toast Notification (Responsive) */
         .resume-toast {
             position: fixed;
             bottom: -100px; /* Start off-screen */
-            right: 2rem;
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Fine-tune centering */
+            width: calc(100% - 2rem); /* Full width with 1rem margins on each side */
             background-color: #111;
             color: #EAEAEA;
             font-family: 'Space Mono', monospace;
@@ -290,22 +292,38 @@
             z-index: 9990;
             display: flex;
             align-items: center;
+            justify-content: center; /* Center text/icon inside */
             gap: 0.75rem;
             text-decoration: none;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
         }
+
         .resume-toast.show {
             bottom: 2rem; /* Slide in */
         }
+
         .resume-toast:hover {
             background-color: #FFD700;
             color: #111;
             border-color: #111;
         }
+
         .resume-toast svg {
             width: 1.5rem;
             height: 1.5rem;
+            flex-shrink: 0; /* Prevents icon from shrinking */
+        }
+
+        /* Desktop styles (md breakpoint) */
+        @media (min-width: 768px) {
+            .resume-toast {
+                left: auto; /* Revert centering */
+                transform: none; /* Revert centering */
+                width: auto; /* Let content define width */
+                right: 2rem; /* Pin to right */
+                justify-content: flex-start; /* Align text to left */
+            }
         }
 
         /* Brutalist Form Styles */
