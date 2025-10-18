@@ -358,6 +358,34 @@
                 display: inline-block !important; /* Show it on 'md' screens and larger */
             }
         }
+
+        /* New counter styles */
+        .toast-counter {
+            position: absolute;
+            top: -8px; /* Position it slightly outside the toast */
+            right: -8px;
+            background-color: #FFD700; /* Your highlight color */
+            color: #111;
+            font-size: 0.875rem; /* 14px */
+            font-weight: 700;
+            font-family: 'Space Mono', monospace;
+            border-radius: 50%;
+            width: 1.75rem;  /* 28px */
+            height: 1.75rem; /* 28px */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            border: 2px solid #111;
+            opacity: 0; /* Start hidden */
+            transition: opacity 0.5s ease;
+            transform: scale(0.9);
+        }
+
+        .resume-toast.show .toast-counter {
+            opacity: 1; /* Fade in when toast is shown */
+            transform: scale(1);
+        }
     </style>
 
    <script type="application/ld+json">
@@ -835,6 +863,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
     </svg>
     Click to Download My Resume
+    <span id="toast-counter" class="toast-counter">5</span>
 </a>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -957,21 +986,34 @@
             setTimeout(typeWriter, 0);
         });
 
-        // Resume Toast Notification
+        // Resume Toast Notification with Countdown
         window.addEventListener('load', () => {
             // Check if user has seen the toast before
             if (!localStorage.getItem('resumeToastShown')) {
                 const toast = document.getElementById('resume-toast');
+                const counter = document.getElementById('toast-counter');
+                let timeLeft = 5; // 5 second countdown
+
+                // 1. Set the initial counter text
+                counter.innerHTML = timeLeft;
                 
-                // Show the toast after 1.5 seconds
+                // 2. Show the toast after 1.5 seconds
                 setTimeout(() => {
                     toast.classList.add('show');
-                }, 1500);
 
-                // Hide the toast after 5 more seconds
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 6500); // 1500 + 5000
+                    // 3. Start the 1-second interval countdown *after* toast is shown
+                    const countdownInterval = setInterval(() => {
+                        timeLeft--;
+                        counter.innerHTML = timeLeft;
+
+                        // 4. When counter reaches 0, stop interval and hide toast
+                        if (timeLeft <= 0) {
+                            clearInterval(countdownInterval);
+                            toast.classList.remove('show');
+                        }
+                    }, 1000); // Run every 1 second
+
+                }, 1500); // Initial 1.5s delay to show toast
 
                 // Mark as shown so it doesn't show again
                 localStorage.setItem('resumeToastShown', 'true');
