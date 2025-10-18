@@ -14,6 +14,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
     <link rel="manifest" href="/static/images/site.webmanifest">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <meta name="google-site-verification" content="dEBwpNdpukL4nDr9z9X8yw3x9jGFnuYSSID0yR7NxP0" />
     <meta name="google-site-verification" content="rqoHxOyAaV5VWyehMkekM0bPsB16o0pvgcHTA0MpT2Q" />
     <meta name="description" content="Rutwik Muley is a creative engineer and developer from Beed, Maharashtra, specializing in full-stack development, AI, and building impactful tech solutions.">
@@ -390,49 +391,100 @@
     </section>
 
     <section id="work" class="py-20 px-4">
-        <div class="container mx-auto relative">
-            <h2 class="text-5xl md:text-8xl font-bold text-gray-300 absolute -top-16 -left-2 md:-top-8 md:-left-8 select-none z-0" data-aos="fade-up">{Selected Works}</h2>
-            <div class="relative z-10 grid md:grid-cols-3 gap-10">
-                <div class="project-card mt-12" data-aos="fade-up">
-                    <div class="bg-black text-white p-2 font-mono text-sm">Project_01</div>
-                    <img src="https://www.note-deck.app/social-preview.png" alt="Broadband Digital" class="w-full h-64 object-contain p-4 bg-gray-900">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold">NoteDeck</h3>
-                        <p class="mt-2 text-gray-600">Developed NoteDeck, a full-stack, AI-powered web application that generates interactive flashcards from user notes, PDFs, and web articles to enhance learning efficiency.</p>
-                        <a href="https://www.note-deck.app/" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Live Project &rarr;</a>
+    <div class="container mx-auto relative">
+        <h2 class="text-5xl md:text-8xl font-bold text-gray-300 absolute -top-16 -left-2 md:-top-8 md:-left-8 select-none z-0" data-aos="fade-up">{Selected Works}</h2>
+        <div class="relative z-10 grid md:grid-cols-3 gap-10">
+
+            <div class="project-card mt-12" data-aos="fade-up">
+                <div class="bg-black text-white p-2 font-mono text-sm">Project_01</div>
+                <img src="https://www.note-deck.app/social-preview.png" alt="NoteDeck" class="w-full h-64 object-contain p-4 bg-gray-900">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold">NoteDeck</h3>
+                    <p class="mt-2 text-gray-600">Developed NoteDeck, a full-stack, AI-powered web application that generates interactive flashcards from user notes, PDFs, and web articles to enhance learning efficiency.</p>
+                    
+                    <div class="mt-4 flex flex-wrap gap-3" title="Tech Stack">
+                        <i class="devicon-python-plain text-2xl" title="Python"></i>
+                        <i class="devicon-flask-original text-2xl" title="Flask"></i>
+                        <i class="devicon-google-plain text-2xl" title="Google GenAI"></i>
+                        <i class="devicon-supabase-plain text-2xl" title="Supabase"></i>
+                        <i class="devicon-postgresql-plain text-2xl" title="PostgreSQL"></i>
+                        <i class="devicon-nltk-original text-2xl" title="NLTK"></i>
+                        <i class="devicon-file-plain text-2xl" title="PDF/DOCX Parsing"></i>
                     </div>
-                </div> 
-                <div class="project-card mt-12" data-aos="fade-up">
-                    <div class="bg-black text-white p-2 font-mono text-sm">Project_02</div>
-                    <img src="https://broadbanddigital.in/static/images/logo.webp" alt="Broadband Digital" class="w-full h-64 object-contain p-4">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold">Broadband Digital</h3>
-                        <p class="mt-2 text-gray-600">A fully responsive ISP website with a Flask-based backend and an intuitive admin dashboard.</p>
-                        <a href="https://broadbanddigital.in/" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Live Project &rarr;</a>
-                    </div>
+
+                    <a href="https://www.note-deck.app/" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Live Project &rarr;</a>
                 </div>
-                <div class="project-card mt-4" data-aos="fade-up" data-aos-delay="200">
-                     <div class="bg-black text-white p-2 font-mono text-sm">Project_03</div>
-                    <img src="https://gondi-wordnet.onrender.com/static/images/gondi-logo.webp" alt="Gondi WordNet" class="w-full h-64 object-contain p-4 bg-gray-900">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold">Gondi WordNet (MahaDict)</h3>
-                        <p class="mt-2 text-gray-600">Co-authored a lexical database for the Gondi language, contributing to linguistic preservation. Published at an IEEE International Conference.</p>
-                        <a href="https://ieeexplore.ieee.org/document/10882401" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Publication &rarr;</a><br>
-                        <a href="https://gondi-wordnet.onrender.com/" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Live Project &rarr;</a>
+            </div> 
+
+            <div class="project-card mt-12" data-aos="fade-up">
+                <div class="bg-black text-white p-2 font-mono text-sm">Project_02</div>
+                <img src="https://broadbanddigital.in/static/images/logo.webp" alt="Broadband Digital" class="w-full h-64 object-contain p-4">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold">Broadband Digital</h3>
+                    <p class="mt-2 text-gray-600">A fully responsive ISP website with a Flask-based backend and an intuitive admin dashboard.</p>
+                    
+                    <div class="mt-4 flex flex-wrap gap-3" title="Tech Stack">
+                        <i class="devicon-python-plain text-2xl" title="Python"></i>
+                        <i class="devicon-flask-original text-2xl" title="Flask"></i>
+                        <i class="devicon-supabase-plain text-2xl" title="Supabase"></i>
+                        <i class="devicon-postgresql-plain text-2xl" title="PostgreSQL"></i>
+                        <i class="devicon-sqlalchemy-plain text-2xl" title="SQLAlchemy"></i>
+                        <i class="devicon-tailwindcss-plain text-2xl" title="Tailwind CSS"></i>
+                        <i class="devicon-jinja-plain text-2xl" title="Jinja2"></i>
                     </div>
-                </div>
-                <div class="project-card mt-12" data-aos="fade-up" data-aos-delay="300">
-                     <div class="bg-black text-white p-2 font-mono text-sm">Project_04</div>
-                    <img src="static/images/cube-runner.webp" alt="Endless Cube Runner Game" class="w-full h-64 object-cover p-4 bg-gray-100">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold">Endless Cube Runner</h3>
-                        <p class="mt-2 text-gray-600">Engineered a 3D endless runner game in Unity3D/C#, handling everything from physics to UI. Deployed on itch.io within a one-week timeframe.</p>
-                        <a href="#" target="_blank" class="inline-block mt-4 font-bold hover:underline">View on Itch.io &rarr;</a>
-                    </div>
+
+                    <a href="https://broadbanddigital.in/" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Live Project &rarr;</a>
                 </div>
             </div>
+
+            <div class="project-card mt-4" data-aos="fade-up" data-aos-delay="200">
+                 <div class="bg-black text-white p-2 font-mono text-sm">Project_03</div>
+                <img src="https://gondi-wordnet.onrender.com/static/images/gondi-logo.webp" alt="Gondi WordNet" class="w-full h-64 object-contain p-4 bg-gray-900">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold">Gondi WordNet (MahaDict)</h3>
+                    <p class="mt-2 text-gray-600">Co-authored a lexical database for the Gondi language, contributing to linguistic preservation. Published at an IEEE International Conference.</p>
+                    
+                    <div class="mt-4 flex flex-wrap gap-3 items-center" title="Tech Stack">
+    
+    <i class="devicon-python-plain text-2xl" title="Python"></i>
+    <i class="devicon-flask-original text-2xl" title="Flask"></i>
+    <i class="devicon-pandas-original text-2xl" title="Pandas"></i>
+    
+    <svg title="NLTK (Natural Language Toolkit)" width="24" height="24" fill="#111" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path clip-rule="evenodd" fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625zM10.5 10.5a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3zm0 3a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3zm0 3a.75.75 0 000 1.5h3a.75.75 0 000-1.s5h-3z"></path>
+    </svg>
+    
+    <i class="devicon-tensorflow-original text-2xl" title="TensorFlow"></i>
+    <i class="devicon-scikitlearn-plain text-2xl" title="scikit-learn"></i>
+    <i class="devicon-supabase-plain text-2xl" title="Supabase"></i>
+    <i class="devicon-postgresql-plain text-2xl" title="PostgreSQL"></i>
+
+</div>
+
+                    <a href="https://ieeexplore.ieee.org/document/10882401" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Publication &rarr;</a><br>
+                    <a href="https://gondi-wordnet.onrender.com/" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Live Project &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card mt-12" data-aos="fade-up" data-aos-delay="300">
+                 <div class="bg-black text-white p-2 font-mono text-sm">Project_04</div>
+                <img src="static/images/cube-runner.webp" alt="Endless Cube Runner Game" class="w-full h-64 object-cover p-4 bg-gray-100">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold">Endless Cube Runner</h3>
+                    <p class="mt-2 text-gray-600">Engineered a 3D endless runner game in Unity3D/C#, handling everything from physics to UI. Deployed on itch.io within a one-week timeframe.</p>
+                    
+                    <div class="mt-4 flex flex-wrap gap-3" title="Tech Stack">
+                        <i class="devicon-unity-original text-2xl" title="Unity"></i>
+                        <i class="devicon-csharp-plain text-2xl" title="C#"></i>
+                    </div>
+
+                    <a href="https://ruts558.itch.io/endless-cube-runner" target="_blank" class="inline-block mt-4 font-bold hover:underline">View on Itch.io &rarr;</a>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
     
     <section id="toolkit" class="mt-4 mb-12 px-4">
         <div class="container mx-auto">
