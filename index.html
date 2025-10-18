@@ -257,6 +257,18 @@
         .headline-container {
             min-height: 240px !important; /* Adjust as needed */
         }
+
+        .custom-cursor.dark-bg {
+            border: 3px solid #EAEAEA; /* Light gray/white border */
+            border: 4;
+        }
+        .custom-cursor.dark-bg.hovered {
+            background-color: #FFD700; /* Fill with white */
+            border:  solid #111;
+        }
+            html {
+      scroll-behavior: smooth;
+    }
     </style>
 
     <script type="application/ld+json">
@@ -316,6 +328,7 @@
         <nav>
         <a href="#about">About</a>
         <a href="#work">Work</a>
+        <a href="#featured-publication">Featured</a>
         <a href="#contact">Contact</a>
         <a href="static/resume/Rutwik's_Resume.pdf" download>Resume</a>
         </nav>
@@ -482,6 +495,31 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+</section>
+
+<section id="featured-publication" class="py-20 px-4 bg-gray-900 text-white">
+    <div class="container mx-auto grid md:grid-cols-5 gap-12 items-center" data-aos="fade-up">
+        
+        <div class="md:col-span-2 ">
+            <img src="https://gondi-wordnet.onrender.com/static/images/gondi-logo.webp" alt="Gondi WordNet" class="w-full h-64 object-contain p-4 bg-gray-800 border-4  border-yellow-300">
+        </div>
+
+        <div class="md:col-span-3">
+            <h4 class="font-mono text-yellow-300 text-lg">Featured Research & Publication</h4>
+            <h2 class="text-4xl md:text-5xl font-bold mt-2">Gondi WordNet (MahaDict)</h2>
+            <p class="mt-4 text-lg text-gray-300 leading-relaxed">
+                As a co-author, I developed the data-gathering processes and NLP models for building a lexical database for the endangered Gondi language. This project contributes to linguistic preservation and was formally published at the <strong></strong>2024 International Conference on Artificial Intelligence and Quantum Computation-Based Sensor Application (ICAIQSA)</strong>.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+                <a href="https://ieeexplore.ieee.org/document/10882401" target="_blank" class="inline-block bg-yellow-300 text-black font-mono py-3 px-6 border-2 border-yellow-300 hover:bg-gray-900 hover:text-yellow-300 transition-all duration-300">
+                    View Publication &rarr;
+                </a>
+                <a href="https://gondi-wordnet.onrender.com/" target="_blank" class="inline-block bg-transparent text-white font-mono py-3 px-6 border-2 border-white hover:bg-white hover:text-black transition-all duration-300">
+                    View Live Project &rarr;
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -696,6 +734,27 @@
             });
         });
         
+        // Dark section cursor handler
+        const darkSection = document.getElementById('featured-publication');
+        if (darkSection) {
+            darkSection.addEventListener('mouseenter', () => {
+                cursor.classList.add('dark-bg');
+            });
+            darkSection.addEventListener('mouseleave', () => {
+                cursor.classList.remove('dark-bg');
+            });
+        }
+        // Toolkit dark background cursor handler
+        const toolkitVisualParent = document.querySelector('.toolkit-visual')?.parentElement;
+        if (toolkitVisualParent) {
+            toolkitVisualParent.addEventListener('mouseenter', () => {
+                cursor.classList.add('dark-bg');
+            });
+            toolkitVisualParent.addEventListener('mouseleave', () => {
+                cursor.classList.remove('dark-bg');
+            });
+        }
+
         // Toolkit Visualizer
         const toolkitItems = document.querySelectorAll('.toolkit-list-item');
         const toolkitVisuals = document.querySelectorAll('.toolkit-visual');
