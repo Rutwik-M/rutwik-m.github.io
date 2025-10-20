@@ -386,6 +386,27 @@
             opacity: 1; /* Fade in when toast is shown */
             transform: scale(1);
         }
+
+        /* Styles for the new "View More" button */
+        .view-more-btn {
+            display: inline-block;
+            margin-top: 2.5rem; /* Space from the grid */
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 1.125rem; /* 18px */
+            color: #111;
+            border: 2px solid #111;
+            padding: 0.75rem 2rem;
+            background-color: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .view-more-btn:hover {
+            background-color: #FFD700;
+            color: #111;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 0 #111;
+        }
     </style>
 
    <script type="application/ld+json">
@@ -619,8 +640,6 @@
                     <a href="https://ruts558.itch.io/endless-cube-runner" target="_blank" class="inline-block mt-4 font-bold hover:underline">View on Itch.io &rarr;</a>
                 </div>
             </div>
-
-        </div>
     </div>
 </section>
 
@@ -796,18 +815,8 @@
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-            <a 
-                href="static/certs/gondi_thumb.jpeg" 
-                target="_blank" 
-                class="project-card block" 
-                data-aos="fade-up"
-                title="View Certificate"
-            >
-                <img 
-                    src="static/images/certs/gondi_thumb.jpeg" 
-                    alt="Gondi WordNet Paper Presentation Certificate" 
-                    class="cert-card-image"
-                >
+            <a href="static/certs/gondi_thumb.jpeg" target="_blank" class="project-card block" data-aos="fade-up" title="View Certificate">
+                <img src="static/images/certs/gondi_thumb.jpeg" alt="Gondi WordNet Paper Presentation Certificate" class="cert-card-image">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold">Paper Presentation (Gondi WordNet)</h3>
                     <p class="mt-2 text-gray-600 font-mono">Event: IEEE ICAIQSA Conference 2024</p>
@@ -815,19 +824,8 @@
                 </div>
             </a>
 
-            <a 
-                href="static/certs/NPTEL_EBusiness.pdf" 
-                target="_blank" 
-                class="project-card block" 
-                data-aos="fade-up" 
-                data-aos-delay="100"
-                title="View Certificate PDF"
-            >
-                <img 
-                    src="static/images/certs/nptel_thumb.jpg" 
-                    alt="NPTEL E-Business Certificate" 
-                    class="cert-card-image"
-                >
+            <a href="static/certs/NPTEL_EBusiness.pdf" target="_blank" class="project-card block" data-aos="fade-up" data-aos-delay="100" title="View Certificate PDF">
+                <img src="static/images/certs/nptel_thumb.jpg" alt="NPTEL E-Business Certificate" class="cert-card-image">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold">NPTEL: E-Business (Elite)</h3>
                     <p class="mt-2 text-gray-600 font-mono">Issued by: NPTEL / IIT Kharagpur</p>
@@ -835,19 +833,8 @@
                 </div>
             </a>
 
-            <a 
-                href="static/certs/Shardeum_Hackathon.jpg" 
-                target="_blank" 
-                class="project-card block" 
-                data-aos="fade-up" 
-                data-aos-delay="200"
-                title="View Certificate"
-            >
-                <img 
-                    src="static/images/certs/shardeum_thumb.jpg" 
-                    alt="Shardeum Hackathon Certificate" 
-                    class="cert-card-image"
-                >
+            <a href="static/certs/Shardeum_Hackathon.jpg" target="_blank" class="project-card md:block hidden expandable-item" data-aos="fade-up" data-aos-delay="200" title="View Certificate">
+                <img src="static/images/certs/shardeum_thumb.jpg" alt="Shardeum Hackathon Certificate" class="cert-card-image">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold">Shardeum PayFi Builder Sprint</h3>
                     <p class="mt-2 text-gray-600 font-mono">Issued by: Shardeum / GCOEN</p>
@@ -855,19 +842,8 @@
                 </div>
             </a>
 
-            <a 
-                href="static/certs/Electrica_2K24.jpg" 
-                target="_blank" 
-                class="project-card block" 
-                data-aos="fade-up" 
-                data-aos-delay="300"
-                title="View Certificate PDF"
-            >
-                <img 
-                    src="static/images/certs/electrica_thumb.jpg" 
-                    alt="ELECTRICA-2K24 Certificate" 
-                    class="cert-card-image"
-                >
+            <a href="static/certs/Electrica_2K24.jpg" target="_blank" class="project-card block expandable-item hidden" data-aos="fade-up" data-aos-delay="300" title="View Certificate PDF">
+                <img src="static/images/certs/electrica_thumb.jpg" alt="ELECTRICA-2K24 Certificate" class="cert-card-image">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold">"Virtual campus" (2nd Prize)</h3>
                     <p class="mt-2 text-gray-600 font-mono">Event: ELECTRICA-2K24 TechFest</p>
@@ -875,26 +851,18 @@
                 </div>
             </a>
 
-            <a 
-                href="static/certs/Radiance.jpg" 
-                target="_blank" 
-                class="project-card block" 
-                data-aos="fade-up" 
-                data-aos-delay="500"
-                title="View Certificate PDF"
-            >
-                <img 
-                    src="static/images/certs/radiance_thumb.jpg" 
-                    alt="RADIANCE Certificate" 
-                    class="cert-card-image"
-                >
+            <a href="static/certs/Radiance.jpg" target="_blank" class="project-card block expandable-item hidden" data-aos="fade-up" data-aos-delay="500" title="View Certificate PDF">
+                <img src="static/images/certs/radiance_thumb.jpg" alt="RADIANCE Certificate" class="cert-card-image">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold">Model Making (3rd Position)</h3>
                     <p class="mt-2 text-gray-600 font-mono">Event: RADIANCE Forum Activity</p>
                     <span class="inline-block mt-4 font-bold hover:underline">View Certificate &rarr;</span>
                 </div>
             </a>
+        </div>
 
+        <div class="text-center">
+            <button class="view-more-btn" data-expanded="false">View More &darr;</button>
         </div>
     </div>
 </section>
@@ -1144,6 +1112,27 @@
                 // Mark as shown so it doesn't show again
                 localStorage.setItem('resumeToastShown', 'true');
             }
+        });
+        document.querySelectorAll('.view-more-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const isExpanded = button.getAttribute('data-expanded') === 'true';
+                const section = button.closest('section'); // Find the parent section
+                const itemsToToggle = section.querySelectorAll('.expandable-item');
+
+                // Toggle visibility for each hidden item
+                itemsToToggle.forEach(item => {
+                    item.classList.toggle('hidden');
+                });
+
+                // Update button state and text
+                if (isExpanded) {
+                    button.setAttribute('data-expanded', 'false');
+                    button.innerHTML = 'View More &darr;';
+                } else {
+                    button.setAttribute('data-expanded', 'true');
+                    button.innerHTML = 'View Less &uarr;';
+                }
+            });
         });
     </script>
     
