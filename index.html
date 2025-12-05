@@ -511,7 +511,10 @@
                 <div class="absolute -bottom-4 -right-2 font-mono text-7xl md:text-[10rem] font-bold text-gray-200 select-none transform rotate-[-15deg] opacity-70">ENGINEER</div>
                 <div class="relative z-10 headline-container">
                      <h1 id="typing-headline" class="text-4xl md:text-6xl font-bold max-w-4xl mx-auto md:mx-0"></h1>
-                     <p class="mt-2 text-lg opacity-0" id="tagline">From Concept to Deployment.!</p>
+                     <p class="mt-2 text-lg opacity-0 relative w-fit mx-auto md:mx-0 group cursor-default" id="tagline">
+                        From Concept to Deployment.!
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-500 ease-in-out group-hover:w-full"></span>
+                    </p>
                 </div>
             </div>
             <div class="relative border-grid flex items-center justify-center p-5 order-1 md:order-2">
@@ -527,7 +530,7 @@
         </div>
     </header>
 
-    <section class="py-6 bg-black text-white overflow-hidden">
+    <section class="py-6 bg-black text-white overflow-hidden dark-cursor-area">
         <div class="flex whitespace-nowrap">
             <h3 class="scrolling-text text-2xl md:text-3xl font-bold px-8">DEVELOPER &middot; ENGINEER &middot; CREATOR &middot; PROBLEM SOLVER &middot; DEVELOPER &middot; ENGINEER &middot; CREATOR &middot; PROBLEM SOLVER &middot;</h3>
             <h3 class="scrolling-text text-2xl md:text-3xl font-bold px-8" aria-hidden="true">DEVELOPER &middot; ENGINEER &middot; CREATOR &middot; PROBLEM SOLVER &middot; DEVELOPER &middot; ENGINEER &middot; CREATOR &middot; PROBLEM SOLVER &middot;</h3>
@@ -540,10 +543,16 @@
                 <h2 class="text-4xl md:text-5xl font-bold md:sticky top-10">About Me</h2>
             </div>
             <div class="md:col-span-3 text-lg leading-relaxed space-y-6" data-aos="fade-up">
-                <p>I'm a passionate and curious engineer, driven by a deep interest in software development, AI, and building impactful tech solutions. I thrive in the space between logic and creativity.</p>
-                <p>With a strong foundation in computer science and a growing expertise in full-stack development, this portfolio is a reflection of my journey — showcasing my projects, my process, and the mindset I bring to every challenge.</p>
-                <p class="font-bold">My goal is simple: to build smart, useful, and beautiful applications that solve real-world problems.</p>
-                <div class="mt-8">
+                <p>
+                    I don't just write code; I engineer systems. As the <b>Vice Chair of the IEEE CS Student Branch (25-26)</b> and a <b>Full-Stack AI Developer</b>, I thrive at the intersection of <b>Research, Product, and Architecture</b>.
+                </p>
+                <p>
+                    Whether it's architecting <b>serverless</b> fintech solutions for non-profits, optimizing NLP pipelines for endangered languages, or leading technical teams — my goal is to build software that is <b>scalable, meaningful, and production-ready</b>.
+                </p>
+                <p>
+                    I specialize in taking raw concepts — be it a research paper or a business need — and deploying them as robust, user-centric applications.
+                </p>
+                <div class="mt-8 hover:scale-105 transition-transform duration-500">
                     <a href="static/resume/Rutwik's_Resume.pdf" download class="inline-block bg-black text-white font-mono py-3 px-6 border-2 border-black hover:bg-yellow-300 hover:text-black transition-all duration-300">Download Resume &darr;</a>
                 </div>
             </div>
@@ -553,58 +562,110 @@
     <section id="work" class="py-20 px-4">
     <div class="container mx-auto relative">
         <h2 class="text-5xl md:text-8xl font-bold text-gray-300 absolute -top-16 -left-2 md:-top-8 md:-left-8 select-none z-0" data-aos="fade-up">{Selected Works}</h2>
-        <div class="relative z-10 grid md:grid-cols-3 gap-10">
-            <div class="project-card mt-12" data-aos="fade-up">
+        <div class="relative z-10 grid md:grid-cols-3 gap-8 items-start">
+            <div class="project-card mt-12 transition-all self-start transform hover:!scale-102 !transition-transform !duration-300 ease-in-out" data-aos="fade-up">
                 <div class="bg-black text-white p-2 font-mono text-sm">Project_01</div>
-            
+
                 <img src="https://gondi-wordnet.onrender.com/static/images/gondi-logo.webp" alt="Gondi WordNet" class="w-full h-64 object-contain p-4 bg-gray-900">
+                
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold inline-block relative hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">Gondi WordNet (MahaDict)</h3>
-                    <p class="mt-2 text-gray-600">A significant NLP and data science project to help preserve the endangered Gondi language. I co-authored the lexical database and models, culminating in a peer-reviewed publication at an IEEE International Conference.</p>
-                    
+                    <h3 class="text-2xl font-bold inline-block relative hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">
+                        Gondi WordNet
+                    </h3>
+                    <p class="mt-4 text-gray-600 leading-relaxed">
+                        A pioneering NLP initiative to preserve the endangered Gondi language. Co-authored the core lexical database and processing models, culminating in a peer-reviewed IEEE publication.
+                    </p>
+
+                    <button onclick="toggleProject(this)" class="mt-3 text-sm font-bold text-black border-b-2 border-black hover:text-yellow-600 hover:border-yellow-600 transition-colors focus:outline-none">
+                        View Capabilities &darr;
+                    </button>
+
+                    <div class="hidden mt-4 space-y-4 border-l-2 border-yellow-400 pl-4 bg-yellow-50/50 p-2 rounded-r-md text-left">
+                        <div>
+                            <h4 class="font-bold text-sm font-mono uppercase text-black">1. Low-Resource NLP</h4>
+                            <p class="text-sm text-gray-700 mt-1">
+                                Developed custom tokenization and lemma processing pipelines specifically optimized for sparse datasets where standard pre-trained models fail.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm font-mono uppercase text-black">2. Relational Schema Design</h4>
+                            <p class="text-sm text-gray-700 mt-1">
+                                Architected a complex SQL schema to map intricate linguistic relationships (synsets, hypernyms) while maintaining sub-100ms query performance.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm font-mono uppercase text-black">3. Academic Impact</h4>
+                            <p class="text-sm text-gray-700 mt-1">
+                                The methodology was validated by the research community and published in the IEEE ICAIQSA Conference 2024.
+                            </p>
+                        </div>
+                    </div>
+
                     <div class="mt-4 flex flex-wrap gap-3 items-center" title="Tech Stack">
-    
-    <i class="devicon-python-plain text-2xl" title="Python"></i>
-    <i class="devicon-flask-original text-2xl" title="Flask"></i>
-    <i class="devicon-pandas-original text-2xl" title="Pandas"></i>
-    
-    <svg title="NLTK (Natural Language Toolkit)" width="24" height="24" fill="#111" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path clip-rule="evenodd" fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625zM10.5 10.5a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3zm0 3a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3zm0 3a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"></path>
-    </svg>
-    
-    <i class="devicon-tensorflow-original text-2xl" title="TensorFlow"></i>
-    <i class="devicon-scikitlearn-plain text-2xl" title="scikit-learn"></i>
-    <i class="devicon-supabase-plain text-2xl" title="Supabase"></i>
-    <i class="devicon-postgresql-plain text-2xl" title="PostgreSQL"></i>
+                        <i class="devicon-python-plain text-2xl" title="Python"></i>
+                        <i class="devicon-flask-original text-2xl" title="Flask"></i>
+                        <i class="devicon-postgresql-plain text-2xl" title="PostgreSQL"></i>
+                        <i class="devicon-tensorflow-original text-2xl" title="TensorFlow"></i>
+                        <span class="px-2 py-1 bg-gray-200 text-xs font-bold border border-black font-mono rounded-sm">NLP Research</span>
+                    </div>
 
-</div>
-
-                    <a href="https://ieeexplore.ieee.org/document/10882401" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Publication &rarr;</a><br>
-                    <a href="https://gondi-wordnet.onrender.com/" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Live Project &rarr;</a>
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <a href="https://ieeexplore.ieee.org/document/10882401" target="_blank" class="inline-block font-bold hover:underline">View Publication &rarr;</a>
+                        <a href="https://gondi-wordnet.onrender.com/" target="_blank" class="inline-block font-bold hover:underline">View Live Project &rarr;</a>
+                    </div>
                 </div>
-            </div>
-            <div class="project-card mt-12" data-aos="fade-up">
+            </div>  
+            <div class="project-card mt-12 transition-all self-start transform hover:!scale-102 !transition-transform !duration-300 ease-in-out" data-aos="fade-up">
                 <div class="bg-black text-white p-2 font-mono text-sm">Project_02</div>
+                
                 <img src="https://www.note-deck.app/social-preview.png" alt="NoteDeck" class="w-full h-64 object-contain p-4 bg-gray-900">
+                
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold inline-block relative hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">NoteDeck</h3>
-                    <p class="mt-2 text-gray-600">Built to solve student information overload. NoteDeck is a full-stack SaaS that uses AI LLM models to instantly generate interactive flashcards from user notes, PDFs, and web articles. Currently used by over <b>350+</b> users with <b>580+</b> decks.</p>
-                    
+                    <h3 class="text-2xl font-bold inline-block relative hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">
+                        NoteDeck (SaaS)
+                    </h3>
+                    <p class="mt-4 text-gray-600 leading-relaxed">
+                        A full-stack AI study platform solving information overload. Currently scaling with <b>350+ users</b> and <b>580+ decks</b>, generating interactive flashcards instantly from unstructured data.
+                    </p>
+
+                    <button onclick="toggleProject(this)" class="mt-3 text-sm font-bold text-black border-b-2 border-black hover:text-yellow-600 hover:border-yellow-600 transition-colors focus:outline-none">
+                        View Capabilities &darr;
+                    </button>
+
+                    <div class="hidden mt-4 space-y-4 border-l-2 border-yellow-400 pl-4 bg-yellow-50/50 p-2 rounded-r-md text-left">
+                        <div>
+                            <h4 class="font-bold text-sm font-mono uppercase text-black">1. RAG-Based Synthesis</h4>
+                            <p class="text-sm text-gray-700 mt-1">
+                                Engineered a Retrieval-Augmented Generation pipeline using LLMs to contextually extract Q&A pairs from dense academic texts with high accuracy.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm font-mono uppercase text-black">2. Multi-Format Ingestion</h4>
+                            <p class="text-sm text-gray-700 mt-1">
+                                Built a robust parsing layer capable of normalizing messy inputs from PDFs, DOCX files, and raw web articles into structured JSON for AI processing.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm font-mono uppercase text-black">3. Production Scalability</h4>
+                            <p class="text-sm text-gray-700 mt-1">
+                                Optimized database indexing and API response times to handle concurrent generation requests without latency spikes.
+                            </p>
+                        </div>
+                    </div>
+
                     <div class="mt-4 flex flex-wrap gap-3" title="Tech Stack">
                         <i class="devicon-python-plain text-2xl" title="Python"></i>
                         <i class="devicon-flask-original text-2xl" title="Flask"></i>
                         <i class="devicon-google-plain text-2xl" title="Google GenAI"></i>
                         <i class="devicon-supabase-plain text-2xl" title="Supabase"></i>
-                        <i class="devicon-postgresql-plain text-2xl" title="PostgreSQL"></i>
-                        <i class="devicon-nltk-original text-2xl" title="NLTK"></i>
-                        <i class="devicon-file-plain text-2xl" title="PDF/DOCX Parsing"></i>
+                        <span class="px-2 py-1 bg-gray-200 text-xs font-bold border border-black font-mono rounded-sm">GenAI</span>
                     </div>
 
                     <a href="https://www.note-deck.app/" target="_blank" class="inline-block mt-4 font-bold hover:underline">View Live Project &rarr;</a>
                 </div>
-            </div> 
+            </div>
 
-             <div class="project-card mt-4" data-aos="fade-up" data-aos-delay="200">
+             <div class="project-card mt-6 transition-all self-start transform hover:!scale-102 !transition-transform !duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="200">
                  <div class="bg-black text-white p-2 font-mono text-sm">Project_03</div>
                 <img src="https://broadbanddigital.in/static/images/logo.webp" alt="Broadband Digital" class="w-full h-64 object-contain p-4">
                 <div class="p-6">
@@ -625,21 +686,128 @@
                 </div>
             </div>
 
-            <div class="project-card mt-12" data-aos="fade-up" data-aos-delay="300">
-                 <div class="bg-black text-white p-2 font-mono text-sm">Project_04</div>
-                <img src="static/images/cube-runner.webp" alt="Endless Cube Runner Game" class="w-full h-64 object-cover p-4 bg-gray-100">
+            <div class="project-card mt-8 transition-all duration-300 self-start transform hover:!scale-102 !transition-transform ease-in-out" data-aos="fade-up">
+                <div class="bg-black text-white p-2 font-mono text-sm">Project_04</div>
+                
+                <img src="https://www.dattamandirbeed.org/images/social-preview.png" alt="Datta Mandir Platform" class="w-full h-64 object-cover p-4 bg-gray-100">
+                
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold inline-block relative hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">Endless Cube Runner</h3>
-                    <p class="mt-2 text-gray-600">Engineered a 3D endless runner game in Unity3D/C#, handling everything from physics to UI. Deployed on itch.io within a one-week timeframe.</p>
+                    <h3 class="text-2xl font-bold inline-block relative hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">
+                        Shree Datta Mandir Platform
+                    </h3>
+                    
+                    <p class="mt-4 text-gray-600 leading-relaxed">
+                        A high-performance digital infrastructure handling thousands of monthly visitors. It features a proprietary <b>FinTech layer</b> engineered to maximize transaction success rates while maintaining zero operational overhead.
+                    </p>
+
+                    <button onclick="toggleDattaMandir(this)" class="mt-3 text-sm font-bold text-black border-b-2 border-black hover:text-yellow-600 hover:border-yellow-600 transition-colors focus:outline-none">
+                        View Capabilities &darr;
+                    </button>
+
+                    <div id="datta-details" class="hidden mt-4 space-y-4 border-l-2 border-yellow-400 pl-4 bg-yellow-50/50 p-2 rounded-r-md text-left">
+                        
+                        <div>
+                            <h4 class="font-bold text-sm font-mono uppercase text-black">1. Smart Payment Routing</h4>
+                            <p class="text-sm text-gray-700 mt-1">
+                                Developed a custom payment protocol that intelligently bridges web browsers with native UPI apps, significantly reducing transaction drop-offs compared to standard gateways.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-sm font-mono uppercase text-black">2. Compliance Automations</h4>
+                            <p class="text-sm text-gray-700 mt-1">
+                                Architected a dual-stage verification engine that issues instant provisional acknowledgments to users while asynchronously queuing financial data for official audit and tax receipt generation.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-sm font-mono uppercase text-black">3. Serverless Edge Compute</h4>
+                            <p class="text-sm text-gray-700 mt-1">
+                                Engineered a fully decoupled architecture where complex computations (astronomy algorithms & document generation) are offloaded to the client-side, resulting in near-zero server costs at scale.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap gap-3 items-center" title="Tech Stack">
+                        <i class="devicon-javascript-plain text-2xl" title="JavaScript (ES6+)"></i>
+                        <i class="devicon-tailwindcss-plain text-2xl" title="Tailwind CSS"></i>
+                        
+                        <svg class="w-6 h-6" viewBox="0 0 128 128" title="Serverless Architecture">
+                            <path fill="#111" d="M98.6 37.3c-2.3-13.6-14.1-23.9-28.3-23.9-12.7 0-23.5 8.2-27.1 19.8-2.5-.5-5.1-.8-7.7-.8-19.1 0-34.6 15.5-34.6 34.6 0 16.9 12.2 31 28.3 33.8v-1.9c-15.1-2.7-26.4-15.9-26.4-31.9 0-18 14.6-32.7 32.7-32.7 2.2 0 4.3.3 6.4.8l1.6.4.5-1.5C47 23.3 57.6 15.3 70.3 15.3c13.4 0 24.6 9.8 26.6 23.2l.3 2.2 2.2.3c15.1 1.9 26.7 14.8 26.7 30.4 0 17-13.8 30.8-30.8 30.8H78.9v1.9h16.4c18 0 32.7-14.7 32.7-32.7.1-16.5-12.2-30.2-28.2-32.2z"/>
+                        </svg>
+
+                        <span class="px-2 py-1 bg-gray-200 text-xs font-bold border border-black font-mono rounded-sm" title="Proprietary Logic">Custom Algorithms</span>
+                    </div>
+
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <a href="https://www.dattamandirbeed.org/" target="_blank" class="inline-block font-bold hover:underline">
+                            View Live Site &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="project-card mt-8 transition-all duration-300 self-start transform hover:!scale-102 !transition-transform ease-in-out" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-black text-white p-2 font-mono text-sm">Project_05</div>
+                
+                <img src="static/images/cube-runner.webp" alt="Endless Cube Runner Game" class="w-full h-64 object-cover p-4 bg-gray-100">
+                
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold inline-block relative hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">
+                        Endless Cube Runner
+                    </h3>
+                    <p class="mt-4 text-gray-600 leading-relaxed">
+                        A high-performance 3D endless runner developed in Unity. Engineered for smooth physics and deployed to itch.io within a rapid one-week prototyping cycle.
+                    </p>
+
+                    <button onclick="toggleProject(this)" class="mt-3 text-sm font-bold text-black border-b-2 border-black hover:text-yellow-600 hover:border-yellow-600 transition-colors focus:outline-none">
+                        View Capabilities &darr;
+                    </button>
+
+                    <div class="hidden mt-4 space-y-4 border-l-2 border-yellow-400 pl-4 bg-yellow-50/50 p-2 rounded-r-md text-left">
+                        <div>
+                            <h4 class="font-bold text-sm font-mono uppercase text-black">1. Physics Optimization</h4>
+                            <p class="text-sm text-gray-700 mt-1">
+                                Implemented efficient collision detection and object pooling to maintain stable 60FPS even in WebGL browser environments.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm font-mono uppercase text-black">2. Procedural Generation</h4>
+                            <p class="text-sm text-gray-700 mt-1">
+                                Designed algorithms to spawn obstacles dynamically, ensuring unique gameplay loops for every session.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm font-mono uppercase text-black">3. Cross-Platform Build</h4>
+                            <p class="text-sm text-gray-700 mt-1">
+                                Optimized assets and lighting baking to ensure the game loads instantly on low-end devices without requiring downloads.
+                            </p>
+                        </div>
+                    </div>
                     
                     <div class="mt-4 flex flex-wrap gap-3" title="Tech Stack">
                         <i class="devicon-unity-original text-2xl" title="Unity"></i>
                         <i class="devicon-csharp-plain text-2xl" title="C#"></i>
+                        <span class="px-2 py-1 bg-gray-200 text-xs font-bold border border-black font-mono rounded-sm">Game Physics</span>
                     </div>
 
                     <a href="https://ruts558.itch.io/endless-cube-runner" target="_blank" class="inline-block mt-4 font-bold hover:underline">View on Itch.io &rarr;</a>
                 </div>
             </div>
+
+            <script>
+            function toggleDattaMandir(btn) {
+                const details = document.getElementById('datta-details');
+                if (details.classList.contains('hidden')) {
+                    details.classList.remove('hidden');
+                    btn.innerHTML = 'Close Capabilities &uarr;';
+                } else {
+                    details.classList.add('hidden');
+                    btn.innerHTML = 'View Capabilities &darr;';
+                }
+            }
+            </script>
     </div>
 </section>
 
@@ -670,7 +838,10 @@
     
     <section id="toolkit" class="mt-10 mb-12 px-4">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center" data-aos="fade-up"># My Toolkit</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center relative w-fit mx-auto group" data-aos="fade-up">
+                # My Toolkit
+                <span class="absolute -bottom-2 left-0 w-0 h-1 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+            </h2>
             <div class="hidden md:grid md:grid-cols-2 border-2 border-black" data-aos="fade-up" data-aos-delay="200">
                 <div class="toolkit-list font-mono grid grid-cols-1 md:grid-cols-2">
                     <div class="toolkit-list-item pre-selected" data-visual="python">
@@ -718,6 +889,9 @@
                     <div class="toolkit-list-item" data-visual="linux">
                         <a href="#"><span class="text-gray-400 mr-4">15</span>Linux / CLI</a>
                     </div>  
+                    <div class="toolkit-list-item" data-visual="system">
+                        <a href="#"><span class="text-gray-400 mr-4">16</span>System Design</a>
+                    </div>
                 </div>
                 <div class="hidden md:flex items-center justify-center border-l-2 border-black">
                     <div id="python-visual" class="toolkit-visual is-active font-mono">
@@ -787,6 +961,14 @@
                     <div id="linux-visual" class="toolkit-visual font-mono">
                         <span class="text-green-400">user@machine:</span><span class="text-blue-400">~$&nbsp;</span>sudo apt-get update && upgrade
                     </div>
+                    <div id="system-visual" class="toolkit-visual font-mono">
+                        <span class="text-purple-400">class</span> <span class="text-yellow-300">Architect</span> {<br>
+                        &nbsp;&nbsp;<span class="text-blue-400">design</span>() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">return</span> "Scalable & Secure";<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">preferance</span> "Serverless & efficient";<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
                 </div>
             </div>
             <div class="md:hidden font-mono flex flex-wrap justify-center items-center gap-x-4 gap-y-6 p-4" data-aos="fade-up">
@@ -794,6 +976,7 @@
                 <span class="bg-gray-200 py-2 px-4 border-2 border-black -rotate-6">C/C++</span>
                 <span class="bg-gray-200 py-2 px-4 border-2 border-black translate-y-2">HTML/CSS/JS</span>
                 <span class="bg-gray-200 py-2 px-4 border-2 border-black rotate-3">Git & GitHub</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black -rotate-7">System Design</span>
                 <span class="bg-gray-200 py-2 px-4 border-2 border-black -rotate-2 translate-y-1">Render</span>
                 <span class="bg-gray-200 py-2 px-4 border-2 border-black">NLP</span>
                 <span class="bg-gray-200 py-2 px-4 border-2 border-black rotate-6">Academic Writing</span>
@@ -809,13 +992,15 @@
         </div>
     </section>
 
-    <section id="certifications" class="py-20 px-4 bg-gray-200">
+    <section id="certifications" class="py-12 px-4 bg-gray-200">
     <div class="container mx-auto">
-        <h2 class="text-4xl font-bold mb-12 text-center" data-aos="fade-up">{Certifications & Awards}</h2>
+        <h2 class="text-4xl font-bold mb-12 text-center relative w-fit mx-auto group" data-aos="fade-up">{Certifications & Awards}
+        <span class="absolute -bottom-2 left-0 w-0 h-1 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+        </h2>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-            <a href="static/certs/gondi_thumb.jpeg" target="_blank" class="project-card block" data-aos="fade-up" title="View Certificate">
+            <a href="static/certs/gondi_thumb.jpeg" target="_blank" class="project-card block transform hover:!scale-105 !transition-transform !duration-300 ease-in-out" data-aos="fade-up" title="View Certificate">
                 <img src="static/images/certs/gondi_thumb.jpeg" alt="Gondi WordNet Paper Presentation Certificate" class="cert-card-image">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold">Paper Presentation (Gondi WordNet)</h3>
@@ -824,7 +1009,7 @@
                 </div>
             </a>
 
-            <a href="static/certs/NPTEL_EBusiness.pdf" target="_blank" class="project-card block" data-aos="fade-up" data-aos-delay="100" title="View Certificate PDF">
+            <a href="static/certs/NPTEL_EBusiness.pdf" target="_blank" class="project-card block transform hover:!scale-105 !transition-transform !duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="100" title="View Certificate PDF">
                 <img src="static/images/certs/nptel_thumb.jpg" alt="NPTEL E-Business Certificate" class="cert-card-image">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold">NPTEL: E-Business (Elite)</h3>
@@ -833,7 +1018,7 @@
                 </div>
             </a>
 
-            <a href="static/certs/Shardeum_Hackathon.jpg" target="_blank" class="project-card md:block hidden expandable-item" data-aos="fade-up" data-aos-delay="200" title="View Certificate">
+            <a href="static/certs/Shardeum_Hackathon.jpg" target="_blank" class="project-card md:block hidden expandable-item transform hover:!scale-105 !transition-transform !duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="200" title="View Certificate">
                 <img src="static/images/certs/shardeum_thumb.jpg" alt="Shardeum Hackathon Certificate" class="cert-card-image">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold">Shardeum PayFi Builder Sprint</h3>
@@ -842,7 +1027,7 @@
                 </div>
             </a>
 
-            <a href="static/certs/Electrica_2K24.jpg" target="_blank" class="project-card block expandable-item hidden" data-aos="fade-up" data-aos-delay="300" title="View Certificate PDF">
+            <a href="static/certs/Electrica_2K24.jpg" target="_blank" class="project-card block expandable-item hidden transform hover:!scale-105 !transition-transform !duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="300" title="View Certificate PDF">
                 <img src="static/images/certs/electrica_thumb.jpg" alt="ELECTRICA-2K24 Certificate" class="cert-card-image">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold">"Virtual campus" (2nd Prize)</h3>
@@ -851,7 +1036,7 @@
                 </div>
             </a>
 
-            <a href="static/certs/Radiance.jpg" target="_blank" class="project-card block expandable-item hidden" data-aos="fade-up" data-aos-delay="500" title="View Certificate PDF">
+            <a href="static/certs/Radiance.jpg" target="_blank" class="project-card block expandable-item hidden transform hover:!scale-105 !transition-transform !duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="500" title="View Certificate PDF">
                 <img src="static/images/certs/radiance_thumb.jpg" alt="RADIANCE Certificate" class="cert-card-image">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold">Model Making (3rd Position)</h3>
@@ -869,7 +1054,7 @@
 
     <footer id="contact" class="py-12 px-4">
     <div class="container mx-auto text-center" data-aos="fade-up">
-        <h2 class="text-5xl md:text-8xl font-bold">Let's Talk.</h2>
+        <h2 class="text-5xl md:text-8xl font-bold hover:scale-110 transition-transform duration-300">Let's Talk.</h2>
         <p class="text-lg md:text-xl font-mono mt-8 mb-8 max-w-2xl mx-auto">
             Have a project in mind, a question, or just want to connect?
             Send me a message, or let's connect on <a href="#Socials" class="hover:bg-yellow-300 hover:text-black">social's</a> below.
@@ -881,7 +1066,7 @@
             class="max-w-3xl mx-auto text-left"
         >
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
+                <div class="transform hover:!scale-105 !transition-transform !duration-300 ease-in-out">
                     <label for="name" class="block text-sm font-mono font-bold uppercase mb-2 ml-1 hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">Full Name</label>
                     <input 
                         type="text" 
@@ -891,7 +1076,7 @@
                         class="form-input"
                     >
                 </div>
-                <div>
+                <div class="transform hover:!scale-105 !transition-transform !duration-300 ease-in-out">
                     <label for="email" class="block text-sm font-mono font-bold uppercase mb-2 ml-1 hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">Email</label>
                     <input 
                         type="email" 
@@ -903,7 +1088,7 @@
                 </div>
             </div>
 
-            <div class="mt-6">
+            <div class="mt-6 transform hover:!scale-102 !transition-transform !duration-300 ease-in-out">
                 <label for="message" class="block text-sm font-mono font-bold uppercase mb-2 ml-1 hover:after:w-full after:content-[''] after:block after:w-0 after:h-1 after:bg-yellow-300 after:transition-all after:duration-300">Message</label>
                 <textarea 
                     name="message" 
@@ -1013,15 +1198,16 @@
         });
         
         // Dark section cursor handler
-        const darkSection = document.getElementById('featured-publication');
-        if (darkSection) {
-            darkSection.addEventListener('mouseenter', () => {
-                cursor.classList.add('dark-bg');
-            });
-            darkSection.addEventListener('mouseleave', () => {
-                cursor.classList.remove('dark-bg');
-            });
-        }
+        const darkElements = document.querySelectorAll('#featured-publication, .dark-cursor-area');
+
+darkElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursor.classList.add('dark-bg');
+    });
+    el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('dark-bg');
+    });
+});
         // Toolkit dark background cursor handler
         const toolkitVisualParent = document.querySelector('.toolkit-visual')?.parentElement;
         if (toolkitVisualParent) {
@@ -1061,7 +1247,7 @@
         // Typing Animation
         const headline = document.getElementById('typing-headline');
         const tagline = document.getElementById('tagline');
-        const textToType = "Building AI-Powered & Web Solutions.";
+        const textToType = "Engineering AI Systems & Scalable Products.";
         let i = 0;
 
         function typeWriter() {
@@ -1134,6 +1320,19 @@
                 }
             });
         });
+    </script>
+
+    <script>
+    function toggleProject(btn) {
+        const details = btn.nextElementSibling;
+        if (details.classList.contains('hidden')) {
+            details.classList.remove('hidden');
+            btn.innerHTML = 'Close Capabilities &uarr;';
+        } else {
+            details.classList.add('hidden');
+            btn.innerHTML = 'View Capabilities &darr;';
+        }
+    }
     </script>
     
 </body>
